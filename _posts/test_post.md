@@ -1,0 +1,15 @@
+---
+layout: post
+title: Testing
+date: 2020-08-05 13:32:20 +0300
+description: Just testing how to post.
+img: i-rest.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [Test, Firstpost]
+---
+Hello world. This is Maryam.
+
+# I am learning data science
+
+Here's an image
+![Here's an image when we can't load it](i-rest.jpg)
