@@ -58,7 +58,7 @@ As a second metric, I also looked at the ROC AUC scores, Logistic Regression als
 
 ![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg)
 
-![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.png)
+![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.jpg)
 
 ## Feature Importance
 
@@ -68,7 +68,7 @@ Funding amount and time to receive the first funding are crucial for success.
 Companies in the USA have a better chance in success than other countries
 Companies in California have a better chance in success than other U.S. states.
 
-![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.png) <!-- .element width="100%" -->
+![Feature Importance](../assets/img/startup-success/Startup-Feature Importance.jpg)
 
 # Flask App 
 
