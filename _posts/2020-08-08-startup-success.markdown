@@ -8,13 +8,11 @@ fig-caption: # Add figcaption (optional)
 tags: [Classification, Startup]
 ---
 ## Overview
-Can we use historical data to predict a startup success or failure?
-I tried to use the power of data, supervised learning, and classification 
-algorithms to answer this million dollar question and understand the key factors contributing to success of a company! 
+Can we use historical data to predict a startup success or failure? I tried to use the power of data, supervised learning, and classification algorithms to answer this million dollar question and understand the key factors contributing to success of a company! 
 
 Below is a summary of the steps performed, results, and the app I created to predict the chance of success. See my github for my code as well as more details.
 
-![Overview](../assets/img/Startup-Overview.jpg)
+![Overview](../assets/img/startup-success/Startup-Overview.jpg)
 
 # Data
 
@@ -58,9 +56,9 @@ I used F2 as my main metric to place extra emphasis on recall to catch any poten
 
 As a second metric, I also looked at the ROC AUC scores, Logistic Regression also performed the best using that metric. Below are a table and figure detailing the performance of the models tested:
 
-![Model Comparsion](../assets/img/Startup-Models.jpg)
+![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg)
 
-![ROC Curves](../assets/img/Startup-ROC Curves.png)
+![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.png)
 
 ## Feature Importance
 
@@ -70,7 +68,7 @@ Funding amount and time to receive the first funding are crucial for success.
 Companies in the USA have a better chance in success than other countries
 Companies in California have a better chance in success than other U.S. states.
 
-![Feature Importance](../assets/img/Startup-Feature Importance.png)
+![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.png)
 
 # Flask App 
 
