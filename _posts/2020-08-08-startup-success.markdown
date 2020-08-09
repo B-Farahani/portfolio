@@ -68,7 +68,7 @@ Funding amount and time to receive the first funding are crucial for success.
 Companies in the USA have a better chance in success than other countries
 Companies in California have a better chance in success than other U.S. states.
 
-![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.png)
+![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.png) <!-- .element width="100%" -->
 
 # Flask App 
 
