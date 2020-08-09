@@ -58,7 +58,7 @@ In total, I built, trained, evaluated, and tested eight algorithms. Logistic Reg
 
 I used F2 as my main metric to place extra emphasis on recall to catch any potential "unicorns" even at the expense of investing in a few "duds". This is of course subjective and a VC firm with lower risk tolerance may choose to place more emphasis on precision than recall. 
 
-As a second metric, I also looked at the ROC AUC scores. Logistic Regression performed the best using this metric as well. See the below table and figure for performance of the models tested:
+As a second metric, I also looked at the ROC AUC scores. Logistic Regression performed the best using this metric as well. See the below table and figure for performance of all the models tested:
 
 ![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg){: .postImage}
 
