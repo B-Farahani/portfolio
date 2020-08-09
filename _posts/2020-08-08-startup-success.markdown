@@ -10,7 +10,7 @@ tags: [Classification, Startup]
 ## Overview
 Can we use historical data to predict a startup's success or failure? I used the power of data, supervised learning, and classification algorithms to explore this million dollar question and better understand the key factors contributing to success of a company! 
 
-Below is a summary of the data, methodology, results, and the app I created to predict the chance of success. See my github for my code and more details.
+Below is a summary of the data, methodology, results, and the app I created to predict the chance of success. See my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) for my code and more details.  
 
 ![Overview](../assets/img/startup-success/Startup-Overview.jpg){: .postImage}
 
