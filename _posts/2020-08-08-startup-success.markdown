@@ -76,4 +76,4 @@ Companies in California have a better chance in success than other U.S. states.
 
 Finally, I created an app using Flask, to predict the probability of success. Here’s a video of how it works:
 
-![Feature Importance](../assets/img/Startup-App.mov)
+[![Demo Startup Success App](https://j.gifs.com/1WAkEm.gif)](https://www.youtube.com/watch?v=OIZRC9J9Voc)
