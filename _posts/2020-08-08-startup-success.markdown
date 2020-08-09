@@ -8,9 +8,9 @@ fig-caption: # Add figcaption (optional)
 tags: [Classification, Startup]
 ---
 ## Overview
-Can we use historical data to predict a startup success or failure? I tried to use the power of data, supervised learning, and classification algorithms to answer this million dollar question and understand the key factors contributing to success of a company! 
+Can we use historical data to predict a startup's success or failure? I used the power of data, supervised learning, and classification algorithms to explore this million dollar question and understand the key factors contributing to success of a company! 
 
-Below is a summary of the steps performed, results, and the app I created to predict the chance of success. See my github for my code as well as more details.
+Below is a summary of the data, methodology, results, and the app I created to predict the chance of success. See my github for my code as well as more details.
 
 ![Overview](../assets/img/startup-success/Startup-Overview.jpg){: .postImage}
 
@@ -22,18 +22,20 @@ information such as:
 
 **Status** (Operating, Acquisition, IPO, or Closed)
 
-**Funding Info** 
+**Funding Information** 
 - Amount
 - Date of the first and last funding
 - Number of rounds
 
-**Location** (country and state)
+**Location** 
+- country 
+- state
 
 **Industry**
 
 # Project Design
 
-To narrow the questions, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that the VCs can use this information to decide if they should invest in a company. I used the following criterias for success and failure:
+To narrow the questions, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that the VCs can use this information to decide if they should invest in a company. I used the following criteria for success and failure and labeled the companies accordingly:
 
 **Success**
 
@@ -44,17 +46,15 @@ To narrow the questions, I approached this from a venture capital (“VC”) poi
 - Closed
 - Operating for less than six years and no funding in the last three years.
 
-It is hard to label the operating companies, however, the majority of the companies in my data were in operating status and in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful to attract funding. 
-
-The average time between fundings for most companies is 12 to 18 months, so I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
+It is hard to label the operating companies, however, the majority of the companies in my data were in operating status and in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful to attract funding. The average time between funding rounds for most companies is 12 to 18 months. Therefore, I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
 
 # Algorithms / Results
 
-In total, I built, trained, evaluated, and tested eight algorithms. Logistic Regression performed the best and is the best model in terms of interpretability. So, I further tuned and tested the Logistic Regression model using a Grid Search Cross-validation. The final F2 score is 0.8040 achieved by a probability threshold of 0.20. 
+In total, I built, trained, evaluated, and tested eight algorithms. Logistic Regression performed the best which is great because it's more interpretable tahn other models. I further tuned and tested the Logistic Regression model using a Grid Search Cross-validation. The final F2 score is 0.8040 achieved by a probability threshold of 0.20.
 
 I used F2 as my main metric to place extra emphasis on recall to catch any potential "unicorns" even at the expense of investing in a few "duds". This is of course subjective and a VC firm with lower risk tolerance may choose to place more emphasis on precision than recall. 
 
-As a second metric, I also looked at the ROC AUC scores, Logistic Regression also performed the best using that metric. Below are a table and figure detailing the performance of the models tested:
+As a second metric, I also looked at the ROC AUC scores, Logistic Regression also performed the best using that metric. See the below table and figure for performance of the models tested:
 
 ![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg){: .postImage}
 
@@ -62,11 +62,11 @@ As a second metric, I also looked at the ROC AUC scores, Logistic Regression als
 
 ## Feature Importance
 
-The figure below shows how important the features are. The following can be inferred by comparing the coefficients:
+The figure below shows the coefficients and importance of each feature. The following can be inferred by comparing the coefficients:
 
-Funding amount and time to receive the first funding are crucial for success.
-Companies in the USA have a better chance in success than other countries
-Companies in California have a better chance in success than other U.S. states.
+- Funding amount and time to receive the first funding are crucial for success.
+- Companies in the USA have a better chance in success than other countries
+- Companies in California have a better chance in success than other U.S. states.
 
 ![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg){: .postImage}
 
