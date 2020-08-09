@@ -60,7 +60,7 @@ As a second metric, I also looked at the ROC AUC scores, Logistic Regression als
 
 ![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.jpg){: .postImage}
 
-## Feature Importance
+# Feature Importance
 
 The figure below shows the coefficients and importance of each feature. The following can be inferred by comparing the coefficients:
 
