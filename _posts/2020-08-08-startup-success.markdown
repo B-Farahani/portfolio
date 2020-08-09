@@ -3,7 +3,7 @@ layout: post
 title: Startup Success Prediction
 date: 2020-08-08 13:32:20 +0300
 description: Startup success prediction using classification.
-img: Startup-Cover.jpg # Add image post (optional)
+img: startup-success/Startup-Cover.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Classification, Startup]
 ---
@@ -68,7 +68,7 @@ Funding amount and time to receive the first funding are crucial for success.
 Companies in the USA have a better chance in success than other countries
 Companies in California have a better chance in success than other U.S. states.
 
-![Feature Importance](../assets/img/startup-success/Startup-Feature Importance.jpg)
+![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg)
 
 # Flask App 
 
