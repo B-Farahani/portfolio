@@ -786,7 +786,9 @@ h1 {
 }
 
 img {
-  max-width: 100%;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   vertical-align: middle;
   display: inline-block;
 }
