@@ -35,9 +35,9 @@ information such as:
 
 # Project Design
 
-To narrow the questions, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that the VCs can use this information to decide if they should invest in a company or not. The results from the model should be coupled with intuition and industry knowledge as historical data is not always a good indication of what might happen in the future! 
+To narrow down the questions, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that the VCs can use this information to decide if they should invest in a company or not. The results however, should be coupled with intuition and industry knowledge as historical data is not always a good indication of what might happen in the future! 
 
-I used the following criteria for success and failure and labeled the data accordingly:
+I used the following criteria to determine success and failure and labeled the data accordingly:
 
 **Success**
 
@@ -48,15 +48,17 @@ I used the following criteria for success and failure and labeled the data accor
 - Closed
 - Operating for less than six years and no funding in the last three years.
 
-It is hard to label the operating companies, however, the majority of the companies in my data were in operating status and in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful to attract funding. In general, the average time between funding rounds for most companies is 12 to 18 months. Therefore, I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
+It is hard to label the operating companies, however, the majority of the companies in my data were in operating status and in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful to attract funding to label them as "failed".
+ 
+ In general, the average time between funding rounds for most companies is 12 to 18 months. Therefore, I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
 
 # Algorithms / Results
 
-In total, I built, trained, evaluated, and tested eight algorithms. Logistic Regression performed the best which is great because it's more interpretable than other models. I further tuned and tested the Logistic Regression model using a Grid Search Cross-validation. The final F2 score is 0.8040 achieved by a probability threshold of 0.20.
+In total, I built, trained, evaluated, and tested eight algorithms. Logistic Regression performed the best which is great because it's more interpretable than other models. I further tuned and tested the Logistic Regression model using a Grid Search Cross-validation. The final F2 score is 0.8040, achieved by a probability threshold of 0.20.
 
 I used F2 as my main metric to place extra emphasis on recall to catch any potential "unicorns" even at the expense of investing in a few "duds". This is of course subjective and a VC firm with lower risk tolerance may choose to place more emphasis on precision than recall. 
 
-As a second metric, I also looked at the ROC AUC scores, Logistic Regression also performed the best using this metric. See the below table and figure for performance of the models tested:
+As a second metric, I also looked at the ROC AUC scores. Logistic Regression performed the best using this metric as well. See the below table and figure for performance of the models tested:
 
 ![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg){: .postImage}
 
@@ -66,9 +68,9 @@ As a second metric, I also looked at the ROC AUC scores, Logistic Regression als
 
 The figure below shows the coefficients and importance of each feature. The following can be inferred by comparing the coefficients:
 
-- Funding amount and time to receive the first funding are crucial for success.
-- Companies in the USA have a better chance in success than other countries
-- Companies in California have a better chance in success than other U.S. states.
+- Funding amount and time to receive the first funding are crucial in a startup's success.
+- Companies in the U.S. have a better chance to succeed than other countries
+- Companies in California have a better chance to succeed than other U.S. states.
 
 ![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg){: .postImage}
 
