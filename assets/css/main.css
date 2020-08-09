@@ -941,6 +941,10 @@ table tfoot td {
   text-align: center;
 }
 
+.postImage {
+  max-width: 70%;
+}
+
 .about .cover-author-image {
   width: 100px;
   height: 100px;

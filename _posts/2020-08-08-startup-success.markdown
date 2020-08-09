@@ -12,7 +12,7 @@ Can we use historical data to predict a startup success or failure? I tried to u
 
 Below is a summary of the steps performed, results, and the app I created to predict the chance of success. See my github for my code as well as more details.
 
-![Overview](../assets/img/startup-success/Startup-Overview.jpg)
+![Overview](../assets/img/startup-success/Startup-Overview.jpg){: .postImage}
 
 # Data
 
@@ -56,9 +56,9 @@ I used F2 as my main metric to place extra emphasis on recall to catch any poten
 
 As a second metric, I also looked at the ROC AUC scores, Logistic Regression also performed the best using that metric. Below are a table and figure detailing the performance of the models tested:
 
-![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg)
+![Model Comparsion](../assets/img/startup-success/Startup-Models.jpg){: .postImage}
 
-![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.jpg)
+![ROC Curves](../assets/img/startup-success/Startup-ROC%20Curves.jpg){: .postImage}
 
 ## Feature Importance
 
@@ -68,10 +68,10 @@ Funding amount and time to receive the first funding are crucial for success.
 Companies in the USA have a better chance in success than other countries
 Companies in California have a better chance in success than other U.S. states.
 
-![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg)
+![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg){: .postImage}
 
 # Flask App 
 
 Finally, I created an app using Flask, to predict the probability of success. Here’s a video of how it works:
 
-[![Demo Startup Success App](https://j.gifs.com/1WAkEm.gif)](https://www.youtube.com/watch?v=OIZRC9J9Voc)
+[![Demo Startup Success App](https://j.gifs.com/1WAkEm.gif){: .postImage}](https://www.youtube.com/watch?v=OIZRC9J9Voc)
