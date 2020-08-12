@@ -68,9 +68,9 @@ As a second metric, I also looked at the ROC AUC scores. Logistic Regression per
 
 The figure below shows the coefficients and importance of each feature. Comparing the features' coefficients suggests the following insights:
 
-- Funding amount and time to receive the first funding are crucial in a startup's success.
-- Companies in the U.S. have a better chance to succeed than other countries
-- Companies in California have a better chance to succeed than other U.S. states.
+- **Funding amount** and **time to receive the first funding** are crucial in a startup's success.
+- Companies in the **U.S.** have a better chance to succeed than other countries.
+- Companies in **California** have a better chance to succeed than other U.S. states.
 
 ![Feature Importance](../assets/img/startup-success/Startup-Feature%20Importance.jpg){: .postImage}
 
