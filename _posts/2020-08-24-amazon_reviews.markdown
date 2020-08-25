@@ -28,9 +28,9 @@ To make the reviews ready for analysis and remove “noise”, I performed the f
 
 Here’s an example of a preprocessed review:
 
-**Original review:** “The &#34;OK&#34; button broke after owning it less than a month.  Had to return to for a refund.  Buying a new one directly from Roku this time even though it costs a little extra.Broke in less than a month”
+**Original review:** “Bought these to replace some bluetooth headphones that finally gave out.  I've paid a lot more for headphones that didn't sound as good as these do.  At $12 I doubt you'll find a better deal.Great sound, great price”
 
-**Preprocessed review:** “ok button break own less month return refund buy new one directly roku time even though cost little extrabroke less month“
+**Preprocessed review:** “buy replace bluetooth headphones finally give ive pay lot headphones didnt sound good doubt youll find better dealgreat sound great price“
 
 # Exploratory Data Analysis
 
