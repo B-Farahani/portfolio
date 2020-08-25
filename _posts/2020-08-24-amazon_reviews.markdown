@@ -3,7 +3,7 @@ layout: post
 title: Analyzing Amazon Reviews
 date: 2020-08-24 18:32:20 +0300
 description: Analyzing amazon reviews using NLP and recommendation system.
-img: startup-success/Startup-Cover.jpg # Add image post (optional)
+img: amazon_reviews/Amazon_Reviews_Cover.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Unsupervised Learning]
 ---
@@ -12,11 +12,11 @@ There is no doubt that the internet has revolutionized the way we live today. Pe
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing is that online stores have millions of products available and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
-For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my Github page. [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) for the code and more details.  
+For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
 # Data and Preprocessing
 
-I downloaded the electronics metadata and electronics’ reviews from here. Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
+I downloaded the electronics metadata and electronics’ reviews from [here](https://github.com/maryam4420/Predicting-Startup-Success). Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
 
 To make the reviews ready for analysis and remove “noise”, I performed the following preprocessing steps using NLTK. 
 
