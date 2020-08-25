@@ -8,17 +8,17 @@ fig-caption: # Add figcaption (optional)
 tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Unsupervised Learning]
 ---
 # Introduction
-There is no doubt that the internet has revolutionized the way we live today. People like myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. This provides a huge amount of valuable information available, and many companies use such information to improve their products, keep their customers happy, and increase sales. So it is important to be able to drive insights from the reviews that can help with business decisions.
+There is no doubt that the internet has revolutionized the way we live in so many ways. People like myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. This creates a great amount of valuable information available, and many companies use such information to improve their products, keep their customers happy, and increase sales. So it is important to be able to drive insights from the reviews to help with business decisions.
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing is that online stores have millions of products available and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
-For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
+For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
 # Data and Preprocessing
 
 I downloaded the electronics metadata and electronics’ reviews from [here](https://github.com/maryam4420/Predicting-Startup-Success). Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
 
-To make the reviews ready for analysis and remove “noise”, I performed the following preprocessing steps using NLTK. 
+To make the reviews ready for analysis and remove “noise”, I performed the following preprocessing steps using NLTK: 
 
 - Converted and standardized accented characters into ASCII characters
 - Removed special characters (e.g. special symbols and punctuation)
@@ -36,7 +36,7 @@ Here’s an example of a preprocessed review:
 
 Let’s first take a look at a few graphs to get a general understanding of the data. 
 
-Below are the number of reviews per year and the number of unique products per year. The data includes headphone product/reviews from the year 2000 through mid 2014 and as expected, the number of reviews per year has increased significantly year over year. But also the number of unique headphones sold through Amazon has increased significantly in the recent years.
+Below are the number of reviews per year and the number of unique products per year. The data includes headphone product/reviews from the year 2000 through mid 2014. As expected we, we can see that the number of reviews per year has increased significantly year over year. But also the number of unique headphones sold through Amazon has increased significantly in the recent years.
  
  
 ![Reviews Per Year](../assets/img/amazon_reviews/Reviews_per_year.jpg){: .postImage}
@@ -62,11 +62,11 @@ Finally, the graph below shows the distribution of the review lengths. The major
 
 I divided the topics into positive and negative to be able to look at them separately and compare them. I used both Countectorizer and TF-IDF for feature extraction and Non-negative Matrix Factorization (NMF) and Latent Semantic Analysis (LDA) to reduce dimensionality and divide the “documents” into the main topics. TF-IDF with NMF performed the best and below are the topics I found:
 
-**Positive Topics** 
+**Positive Topics:** 
 
 ![Positive Topics](../assets/img/amazon_reviews/Positive topics.jpg){: .postImage}
 
-**Negative Topics**
+**Negative Topics:**
 
 ![Negative Topics](../assets/img/amazon_reviews/Negative topics.jpg){: .postImage}
 
@@ -74,7 +74,7 @@ To summarize, people have talked about 1) the sound and quality of the headphone
 
 Additionally, I noted that there was no mention of noise cancelling in the positive topics, so it looks like the noise cancelling did not quite meet people’s expectations and resulted in negative reviews. Note that these reviews were written before 2015 and noise cancelling technology has most likely improved in the recent years.
 
-# Word Cloud (Supervised Learning)
+# WordCloud (Supervised Learning)
 
 The results of the unsupervised topic modeling was interesting and inline with my expectations. But I wanted to take another approach and zoom in a bit more! I decided to compare two brands and find out the most frequent things people have said about them. Below is a graph of the top 10 brands in the data. I decided to focus on Sony and Panasonic as they are rivals and headquartered in the same country. 
 
@@ -92,9 +92,9 @@ I converted the reviews into words and bigrams using a Countvectorizer and assig
 
 It turns out, we can learn a lot by comparing the most frequent comments; 
 
-For both brands, most people have agreed with great price, quality, and fit. 
-For Sony, many people have talked about the overall sound quality, but for Panasonic, many people have specifically mentioned that they like the bass! 
-Many people mentioned that they have purchased a second pair of Sony headphones, but that was not the case for Panasonic!
+- For both brands, most people have agreed with great price, quality, and fit. 
+- For Sony, many people have talked about the overall sound quality, but for Panasonic, many people have specifically mentioned that they like the bass! 
+- Many people mentioned that they have purchased a second pair of Sony headphones, but that was not the case for Panasonic!
 
 # Recommender System 
 
