@@ -14,6 +14,7 @@ On the other hand, while shopping has become easier in so many ways, one problem
 
 For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
+![Overview](../assets/img/amazon_reviews/Itro_Pic.jpg){: .postImage}
 # Data and Preprocessing
 
 I downloaded the electronics metadata and electronics’ reviews from [here](http://jmcauley.ucsd.edu/data/amazon/). Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
