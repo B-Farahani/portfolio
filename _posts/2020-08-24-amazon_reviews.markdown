@@ -16,7 +16,7 @@ For this project, I decided to use Natural Language Processing to analyze Amazon
 
 # Data and Preprocessing
 
-I downloaded the electronics metadata and electronics’ reviews from [here](https://github.com/maryam4420/Predicting-Startup-Success). Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
+I downloaded the electronics metadata and electronics’ reviews from [here](http://jmcauley.ucsd.edu/data/amazon/). Then merged them together to get the products information and their reviews in one dataset. Then I extracted the headphone data from it. After removing missing values and duplicates, the final headphones dataset included  ~ 47,000 records, including ~ 1,200 unique products and ~ 23,000 unique users/reviewers.
 
 To make the reviews ready for analysis and remove “noise”, I performed the following preprocessing steps using NLTK: 
 
