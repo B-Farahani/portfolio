@@ -12,7 +12,7 @@ There is no doubt that the internet has revolutionized the way we live and how b
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing today is that online stores have millions of products available and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
-For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
+For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier for the customers. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
 ![Overview](../assets/img/amazon_reviews/Itro_Pic.jpg){: .postImage}
 # Data and Preprocessing
@@ -37,7 +37,7 @@ Here’s an example of a preprocessed review:
 
 Let’s first take a look at a few graphs to get a general understanding of the data. 
 
-Below are the number of reviews per year and the number of unique products per year. The data includes headphone product/reviews from the year 2000 through mid 2014. As expected we, we can see that the number of reviews per year has increased significantly year over year. But also the number of unique headphones sold through Amazon has increased significantly in the recent years.
+Below are the number of reviews per year and the number of unique products per year. The data includes headphone product/reviews from the year 2000 through mid 2014. As expected, we can see that the number of reviews per year has increased significantly year over year. But also the number of unique headphones sold through Amazon has increased significantly in the recent years.
  
  
 ![Reviews Per Year](../assets/img/amazon_reviews/Reviews_per_year.jpg){: .postImage}
@@ -52,20 +52,20 @@ Below are the number of reviews per year and the number of unique products per y
 
 ![Reviews length](../assets/img/amazon_reviews/Box_plot_reviews_length.jpg){: .postImage}
 
-Finally, the graph below shows the distribution of the review lengths. The majority of people have written reviews with less than 1,000 characters, which is about ⅓ of a page. 
+Finally, the graph below shows the distribution of the length of the reviews. The majority of people have written reviews with less than 1,000 characters, which is about ⅓ of a page. 
 
 ![Distribution of length](../assets/img/amazon_reviews/Distribution_of_review_length.jpg){: .postImage}
  
  After exploring the data, I assigned a rating class of one to reviews with ratings of four and five (positive reviews), and a rating class of zero to reviews with ratings of one and two (negative reviews). Additionally, for computational purposes, I only focused on the more recent reviews (after 2011). The final dataset included ~ 24,000 reviews which was later converted to ~ 1.2 M bigrams and trigrams!
 
 # Sentiment Analysis
-Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion) and it aims to measure the attitude, sentiments, intensity, and emotions of the speaker. For example words like 'love', 'enjoy', and 'amazing' convey a positive sentiment and words like 'hate', 'dislike', and 'bad' convey a negative sentiment. I wanted to get an understanding of how happy or upset the customers are, so I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results and we can see that the customers' tone is more positive for higher ratings. In other words, by looking at the reviews' text alone, we can confirm that the customers are more satisfied with the products that have higher rating.
+Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion) and it aims to measure the attitude, sentiments, intensity, and emotions of the speaker. For example words like 'love', 'enjoy', and 'amazing' convey a positive sentiment and words like 'hate', 'dislike', and 'bad' convey a negative sentiment. I wanted to get an understanding of how happy or upset the customers are, so I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results and we can see that the customers' tone is more positive for higher ratings. In other words, by looking at the reviews, we can confirm that the customers are more satisfied with the products that have higher rating.
 
 ![Average Sentiment Per Rating](../assets/img/amazon_reviews/Average_Sentiment_Per_Rating.jpg){: .postImage}
 
 ![Ratings' Average Sentiment Per Year](../assets/img/amazon_reviews/Ratings'_Average_Sentiment_Per_Year.jpg){: .postImage} 
 
-I also looked at the the average sentiment for all the reviews combined, for the last decade. As shown below, sentiment has improved through the years, which makes sense, given Amazon's success in the recent years.
+I also looked at the the average sentiment for all the reviews combined, for the last decade. As shown below, overall, sentiment has improved through the years, which makes sense, given Amazon's success in the recent years.
 
 ![Average Sentiment Per Year](../assets/img/amazon_reviews/Average_Sentiment_Per_Year.jpg){: .postImage}
 
@@ -88,7 +88,7 @@ Additionally, I noted that there was no mention of noise cancelling in the posit
 
 # WordCloud (Supervised Learning)
 
-The results of the unsupervised topic modeling was interesting and inline with my expectations. But I wanted to take another approach and zoom in a bit more! I decided to compare two brands and find out the most frequent things people have said about them. Below is a graph of the top 10 brands in the data. I decided to focus on Sony and Panasonic as they are rivals and headquartered in the same country. 
+The results of the unsupervised topic modeling was interesting and inline with my expectations. But I wanted to take another approach and zoom in a bit more! I decided to compare two brands and find out the most frequent things people have said about them. I looked at the top 10 brands in the data, that is show below, and decided to focus on Sony and Panasonic as they are rivals and headquartered in the same country. 
 
 ![Top 10 Brands](../assets/img/amazon_reviews/Top_10_brands.jpg){: .postImage}
 
@@ -109,11 +109,9 @@ It turns out, we can learn a lot by comparing the most frequent comments;
 - Many people mentioned that they have purchased a second pair of Sony headphones, but that was not the case for Panasonic!
 
 # Recommender System 
-There are a few kinds recommender systems that are commonly used by companies: content-based filtering and collaborative filtering (item based and user based). Companies use one or a variety of these methods to recommend the best product to the customers and consequently increase sales. The appropriate recommender engine and the recommended products are chosen based on a variety of factors such as customers demographics and the nature of the product (e.g. movies vs. electronic products vs. news articles). The best method and recommendations also significantly depends on the business needs and direction. For example, other than what the customer would find desirable, a company may want to promote certain products more than other products or recommend products that are on sale.
+There are a few kinds recommender systems that are commonly used by companies: content-based filtering and collaborative filtering (item based and user based). Companies use one or a variety of these methods to recommend the best product to the customers and consequently increase sales. The appropriate recommender engine and the recommended products are chosen based on a variety of factors such as customers' demographics and the nature of the product (e.g. movies vs. electronic products vs. news articles). The best method and recommendations also significantly depend on the business needs and direction. For example, other than what the customer would find desirable, a company may want to promote certain products more than other products or recommend products that are on sale.
 
-For this project, I decided to create a content-based filtering using reviews to help customers find the desired product based on other customers reviews. Generally, in content-based filtering the similarity between products is calculated on the basis of the attributes of the products (e.g. text/description, brand, price). This method is often used to solve the cold start problem, where there are no user information such as ratings, or users' purchased information. 
-
-In the case of Amazon's headphones, and in this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation, based on the reviews that have the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the top 3 recommended products. 
+For this project, I decided to create a content-based filtering using reviews to help customers find the desired product based on other customers reviews. Generally, in content-based filtering the similarity between products is calculated on the basis of the attributes of the products (e.g. text/description, brand, price). This method is often used to solve the cold start problem, where there are no user information such as ratings, or users' purchased information. But in the case of Amazon's headphones, and in this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation, based on the reviews that have the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the top 3 recommended products. 
 
 **Customers' text:** "Comfortable headphone, with great sound quality and good looking design!"
 
@@ -121,4 +119,3 @@ In the case of Amazon's headphones, and in this dataset, there are many reviews 
 
 This recommendation system can of course be further tuned to allow the customer to filter for price or brand. Also, the products's descriptions can be used instead of the reviews to also capture the new reviews that do not have reviews yet.
 
-# Conclusion
