@@ -59,12 +59,12 @@ Finally, the graph below shows the distribution of the review lengths. The major
  After exploring the data, I assigned a rating class of one to reviews with ratings of four and five (positive reviews), and a rating class of zero to reviews with ratings of one and two (negative reviews). Additionally, for computational purposes, I only focused on the more recent reviews (after 2011). The final dataset included ~ 24,000 reviews which was later converted to ~ 1.2 M bigrams and trigrams!
 
 # Sentiment Analysis
-Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion) and it aims to measure the attitude, sentiments, intensity, and emotions of the speaker. For example words like 'love', 'enjoy', convey a positive sentiment and words like 'hate', 'dislike', 'suck' convey a negative sentiment. I wanted to get an understanding of how happy or upset the customers are, so I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results. As expected, the average sentiment is higher for a higher ratings:
+Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion) and it aims to measure the attitude, sentiments, intensity, and emotions of the speaker. For example words like 'love', 'enjoy', and 'amazing' convey a positive sentiment and words like 'hate', 'dislike', and 'bad' convey a negative sentiment. I wanted to get an understanding of how happy or upset the customers are, so I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results and we can see that the sentiment (which means satisfaction with product here) is higher for higher ratings, as expected.
 
 ![Average Sentiment Per Rating](../assets/img/amazon_reviews/Average_Sentiment_Per_Rating.jpg){: .postImage}
 ![Ratings' Average Sentiment Per Year](../assets/img/amazon_reviews/Ratings'_Average_Sentiment_Per_Year.jpg){: .postImage} 
 
-I also looked at the the average sentiment for all the reviews combined, for the last decade. As shown below, sentiment has increased through the years. 
+I also looked at the the average sentiment for all the reviews combined, for the last decade. As shown below, sentiment has increased through the years. This makes sense, given Amazon's success in the recent years.
 
 ![Average Sentiment Per Year](../assets/img/amazon_reviews/Average_Sentiment_Per_Year.jpg){: .postImage}
 
