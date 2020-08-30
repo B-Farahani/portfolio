@@ -94,11 +94,11 @@ The results of the unsupervised topic modeling was interesting and inline with m
 
 I converted the reviews into words and bigrams using a Countvectorizer and assigned a frequency and average rating to them based on ratings. Then, I sorted them based on rating to get the reviews with the highest sentiment.  Below are the WordClouds for both Sony and Panasonic. 
 
-**Sony:**
+## Sony:
 
 ![Sony](../assets/img/amazon_reviews/Sony.jpg){: .postImage}
 
-**Panasonic:**
+## Panasonic:
 
 ![Panasonic](../assets/img/amazon_reviews/Panasonic.jpg){: .postImage}
 
