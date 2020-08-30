@@ -109,7 +109,9 @@ It turns out, we can learn a lot by comparing the most frequent comments;
 - Many people mentioned that they have purchased a second pair of Sony headphones, but that was not the case for Panasonic!
 
 # Recommender System 
+There are a few kinds recommender systems that are commonly used by companies: Content-based filtering and collaborative filtering (item based and user based). Companies use one or a variety of these methods to recommend the best product to the customers and increase sales. The appropriate recommender engine is chosen based on a variety of factors such as customers demographics and the nature of the product (e.g. movies versus electronic products). But at the end of the day the best method is chosen also based on business needs and direction. For example a company may want to promote certain products more than other products, shows products are on sale, or simply recommend the products that the customers find interesting (e.g. recommending songs/music)
 
-This section will be coming soon!
+In content-based filtering the similarity between products is calculated on the basis of the attributes of the products (e.g. text/description, brand, price). This is method is often used for the cold start problem, where there are no user information such as ratings, or which user purchased which products. In the case of Amazon, there are many reviews available, so I decided to create a content-based filtering using reviews to help customers to find the desired product based on other customers reviews. In other words, the customer can type what they are looking for and find get a recommendation based on the review that has the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the recommended products. This can of course be further tuned to allow the customer to filter for price or brand. 
+
 
 ![Recommendation](../assets/img/amazon_reviews/Recommendation.jpg){: .postImage}
