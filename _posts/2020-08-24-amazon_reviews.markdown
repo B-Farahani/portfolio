@@ -113,7 +113,7 @@ There are a few kinds recommender systems that are commonly used by companies: c
 
 For this project, I decided to create a content-based filtering using reviews to help customers find the desired product based on other customers reviews. Generally, in content-based filtering the similarity between products is calculated on the basis of the attributes of the products (e.g. text/description, brand, price). This method is often used to solve the cold start problem, where there are no user information such as ratings, or users' purchased information. 
 
-In the case of Amazon and headphones, and in this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation based on the reviews that has the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the recommended products. 
+In the case of Amazon's headphones, and in this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation, based on the reviews that have the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the top 3 recommended products. 
 
 **Customers' text:** "Comfortable headphone, with great sound quality and good looking design!"
 
