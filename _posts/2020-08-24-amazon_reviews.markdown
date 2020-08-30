@@ -115,6 +115,8 @@ For this project, I decided to create a content-based filtering using reviews to
 
 In the case of Amazon and headphones, and in this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation based on the reviews that has the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the recommended products. 
 
+**Customers' text:** "Comfortable headphone, with great sound quality and good looking design!"
+
 ![Recommendation](../assets/img/amazon_reviews/Recommendation.jpg){: .postImage}
 
 This recommendation system can of course be further tuned to allow the customer to filter for price or brand. Also, the products's descriptions can be used instead of the reviews to also capture the new reviews that do not have reviews yet.
