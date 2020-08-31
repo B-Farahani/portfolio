@@ -119,5 +119,5 @@ In the case of Amazon's headphones, and this dataset, there are many reviews ava
 
 ![Recommendation](../assets/img/amazon_reviews/Recommendation.jpg){: .postImage}
 
-This recommendation system can, of course, be further tuned to allow the customers to filter for features such as price or brand. Also, as mentioned above, the products' descriptions can easily be used instead of the reviews as a different strategy and to also capture the new products that do not have reviews yet.
+This recommendation system can, of course, be further tuned to allow the customers to filter for features such as price or brand. Also, as mentioned above, the products' descriptions can easily be used instead of the reviews as an alternative strategy and to also capture the new products that do not have reviews yet.
 
