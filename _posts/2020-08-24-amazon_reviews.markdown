@@ -59,7 +59,7 @@ Finally, the graph below shows the distribution of the length of the reviews. Th
  After exploring the data, I assigned a rating class of one to reviews with ratings of four and five (positive reviews), and a rating class of zero to reviews with ratings of one and two (negative reviews). Additionally, for computational purposes, I only focused on the more recent reviews (after 2011). The final dataset included ~ 24,000 reviews which was later converted to ~ 1.2 M bigrams and trigrams!
 
 # Sentiment Analysis
-Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion), and it aims to measure the attitude, sentiments, intensity, and emotions of the speaker. For example, words like 'love', 'enjoy', and 'amazing' convey a positive sentiment, while words like 'hate', 'dislike', and 'bad' convey a negative sentiment. To better understand how happy or upset the customers are, I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results, and we can see that the customers' tone is more positive for higher ratings. In other words, by looking at the reviews, we can confirm that the customers are more satisfied with the products that have a higher rating.
+Sentiment analysis is a text analysis method that detects polarity (e.g. positive or negative opinion), and it aims to measure the attitude, sentiment, intensity, and emotions of the speaker. For example, words like 'love', 'enjoy', and 'amazing' convey a positive sentiment, while words like 'hate', 'dislike', and 'bad' convey a negative sentiment. To better understand how happy or upset the customers are, I analyzed the reviews, separately for each rating, using VADER (Valence Aware Dictionary for Sentiment Reasoning). The figures below show the results, and we can see that the customers' tone is more positive for higher ratings. In other words, by looking at the reviews, we can confirm that the customers are more satisfied with the products that have a higher rating.
 
 ![Average Sentiment Per Rating](../assets/img/amazon_reviews/Average_Sentiment_Per_Rating.jpg){: .postImage}
 
@@ -72,7 +72,7 @@ I also looked at the average sentiment for all the reviews, combined, for the la
 # Topic Modeling (Unsupervised Learning)
 
 
-I divided the topics into positive and negative to be able to look at them separately and compare them. I used both Countectorizer and TF-IDF for feature extraction and Non-negative Matrix Factorization (NMF) and Latent Semantic Analysis (LDA) to reduce dimensionality and divide the “documents” into the main topics. TF-IDF with NMF performed the best and below are the topics I found:
+I divided the topics into positive and negative to be able to look at them separately and compare them. I used both Countectorizer and TF-IDF for feature extraction and Non-negative Matrix Factorization (NMF) and Latent Semantic Analysis (LDA) to reduce dimensionality and find the main topics in the corpus (separately for the positive reviews and for the negative reviews). TF-IDF with NMF performed the best and below are the topics I found:
 
 **Positive Topics:** 
 
@@ -84,7 +84,7 @@ I divided the topics into positive and negative to be able to look at them separ
 
 To summarize, people have talked about 1) the sound and quality of the headphones, 2) comfort and fit, and 3) if they recommend the product. Interestingly enough, there was no mention of the price in the negative comments, which suggests these lower rating reviews were for cheaper products with lower quality. 
 
-Additionally, I noted that there was no mention of noise cancelling in the positive topics, so it looks like the noise cancelling did not quite meet people’s expectations and resulted in negative reviews. Note that these reviews were written before 2015 and noise cancelling technology has most likely improved in the recent years.
+Additionally, I noted that there was no mention of noise-canceling in the positive topics, so it looks like the noise-canceling did not quite meet people’s expectations and resulted in negative reviews. Note that these reviews were all written before 2015, and noise-canceling technology has most likely improved in recent years.
 
 # WordCloud (Supervised Learning)
 
