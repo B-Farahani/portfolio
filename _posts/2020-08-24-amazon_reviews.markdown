@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Unsupervised Learning]
 ---
 # Introduction
-There is no doubt that the internet has revolutionized the way we live today and how businesses operate. People are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. These reviews create a significant amount of valuable information, and many companies analyze such information to improve their products, keep their customers happy, and increase sales. So in today's competitive business environment, it is crucial to be able to drive insights from the reviews that can help with business decisions.
+There is no doubt that the internet has revolutionized the way we live today and how businesses operate. People, including myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. These reviews create a significant amount of valuable information, and many companies analyze such information to improve their products, keep their customers happy, and increase sales. So in today's competitive business environment, it is crucial to be able to drive insights from the reviews that can help with business decisions.
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing today is that online stores have millions of products available, and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
