@@ -84,7 +84,7 @@ I divided the topics into positive and negative to be able to look at them separ
 
 To summarize, people have talked about 1) the sound and quality of the headphones, 2) comfort and fit, and 3) if they recommend the product. Interestingly enough, there was no mention of the price in the negative comments, which suggests these lower rating reviews were for cheaper products with lower quality. 
 
-Additionally, I noted that there was no mention of noise-canceling in the positive topics, so it looks like the noise-canceling did not quite meet people’s expectations and resulted in negative reviews. Note that these reviews were all written before 2015, and noise-canceling technology has most likely improved in recent years.
+Additionally, I noted that there was no mention of noise-canceling in the positive topics, so it looks like the noise-cancelling did not quite meet people’s expectations and resulted in negative reviews. Note that these reviews were all written before 2015, and noise-cancelling technology has most likely improved in recent years.
 
 # WordCloud (Supervised Learning)
 
