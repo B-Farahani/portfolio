@@ -88,7 +88,7 @@ Additionally, I noted that there was no mention of noise-canceling in the positi
 
 # WordCloud (Supervised Learning)
 
-The results of the unsupervised topic modeling was interesting and inline with my expectations. But I wanted to take another approach and zoom in a bit more! I decided to compare two brands and find out the most frequent things people have said about them. I looked at the top 10 brands in the data, that is show below, and decided to focus on Sony and Panasonic as they are rivals and headquartered in the same country. 
+The results of the unsupervised topic modeling were interesting and in line with my expectations. But I wanted to take another approach and zoom in a bit more! I decided to compare two brands and find out the most frequent things people have said about them. I looked at the top 10 brands in the data, that are shown below, and decided to focus on Sony and Panasonic as they are rivals and headquartered in the same country. 
 
 ![Top 10 Brands](../assets/img/amazon_reviews/Top_10_brands.jpg){: .postImage}
 
@@ -102,11 +102,11 @@ I converted the reviews into words and bigrams using a Countvectorizer and assig
 
 ![Panasonic](../assets/img/amazon_reviews/Panasonic.jpg){: .postImage}
 
-It turns out, we can learn a lot by comparing the most frequent comments; 
+It turns out that we can learn a lot by comparing the most frequent comments; 
 
-- For both brands, most people have agreed with great price, quality, and fit. 
+- For both brands, most people have agreed with the great price, quality, and fit. 
 - For Sony, many people have talked about the overall sound quality, but for Panasonic, many people have specifically mentioned that they like the bass! 
-- Many people mentioned that they have purchased a second pair of Sony headphones, but that was not the case for Panasonic!
+- Many people specified that they purchased a second pair of Sony headphones, but that was not the case for Panasonic!
 
 # Recommender System 
 There are a few kinds recommender systems that are commonly used by companies: content-based filtering and collaborative filtering (item based and user based). Companies use one or a variety of these methods to recommend the best product to the customers and consequently increase sales. The appropriate recommender engine and the recommended products are chosen based on a variety of factors such as customers' demographics and the nature of the product (e.g. movies vs. electronic products vs. news articles). The best method and recommendations also significantly depend on the business needs and direction. For example, other than what the customer would find desirable, a company may want to promote certain products more than other products or recommend products that are on sale.
