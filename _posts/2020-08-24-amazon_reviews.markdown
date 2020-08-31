@@ -65,7 +65,7 @@ Sentiment analysis is a text analysis method that detects polarity (e.g. positiv
 
 ![Ratings' Average Sentiment Per Year](../assets/img/amazon_reviews/Ratings'_Average_Sentiment_Per_Year.jpg){: .postImage} 
 
-I also looked at the the average sentiment for all the reviews combined, for the last decade. As shown below, overall, sentiment has improved through the years, which makes sense, given Amazon's success in the recent years.
+I also looked at the average sentiment for all the reviews, combined, for the last decade. As shown below, overall, sentiment has improved through the years, which makes sense, given Amazon's success in recent years.
 
 ![Average Sentiment Per Year](../assets/img/amazon_reviews/Average_Sentiment_Per_Year.jpg){: .postImage}
 
