@@ -8,11 +8,11 @@ fig-caption: # Add figcaption (optional)
 tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Unsupervised Learning]
 ---
 # Introduction
-There is no doubt that the internet has revolutionized the way we live today and how businesses operate. People like myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. The reviews creates a great amount of valuable information available, and many companies use such information to improve their products, keep their customers happy, and increase sales. So it is important to be able to drive insights from the reviews that can help with business decisions.
+There is no doubt that the internet has revolutionized the way we live today and how businesses operate. People like myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. These reviews create a great amount of valuable information, and many companies analyze such information to improve their products, keep their customers happy, and increase sales. So it is important to be able to drive insights from the reviews that can help with business decisions.
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing today is that online stores have millions of products available and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
-For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier for the customers. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
+For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products, and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the desired products easier for the customers. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
 ![Overview](../assets/img/amazon_reviews/Itro_Pic.jpg){: .postImage}
 # Data and Preprocessing
