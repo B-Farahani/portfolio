@@ -43,12 +43,12 @@ Below are the number of reviews per year and the number of unique products per y
 ![Reviews Per Year](../assets/img/amazon_reviews/Reviews_per_year.jpg){: .postImage}
 ![Unique Product Per Year](../assets/img/amazon_reviews/Unique_product_per_year.jpg){: .postImage}
 
- Each product has a rating of one through five and as shown below, more than 50% of the products had a rating of five and only 6% had a rating of one! 
+Each product has a rating of one through five, and as shown below, more than 50% of the products had a rating of five, while only 6% had a rating of one!  
  
 ![Reviews Per Rating](../assets/img/amazon_reviews/Reviews_per_rating.jpg){: .postImage}
 ![Reviews Percentage](../assets/img/amazon_reviews/Reviews_pie_chart.jpg){: .postImage}
  
- I was also interested to see the length of the reviews. The graph below shows the review length for each rating after removing the outliers. The lengths are relatively consistent across the ratings. 
+I was also interested to see the length of the reviews. The graph below shows the review length for each rating after removing the outliers. The lengths are relatively consistent across the ratings. 
 
 ![Reviews length](../assets/img/amazon_reviews/Box_plot_reviews_length.jpg){: .postImage}
 
