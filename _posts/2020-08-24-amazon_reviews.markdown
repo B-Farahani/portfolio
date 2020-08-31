@@ -10,7 +10,7 @@ tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Uns
 # Introduction
 There is no doubt that the internet has revolutionized the way we live today and how businesses operate. People, including myself, are increasingly shopping online, writing reviews, and using other customers’ reviews to make better shopping decisions. These reviews create a significant amount of valuable information, and many companies analyze such information to improve their products, keep their customers happy, and increase sales. So in today's competitive business environment, it is crucial to be able to drive insights from the reviews to make smarter business decisions.
 
-On the other hand, while shopping has become easier in so many ways, one problem that consumers are facing today is that online stores have millions of products available, and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
+On the other hand, while shopping has become easier in so many ways, one problem that consumers are increasingly facing is that online stores have millions of products available, and finding the right product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
 For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the desired products easier for the customers. Below is a summary of the data, process, and results. You can see my code on my [GitHub](https://github.com/maryam4420/Predicting-Startup-Success) repo. 
 
@@ -37,7 +37,7 @@ Here’s an example of a preprocessed review:
 
 Let’s first take a look at a few graphs to get a general understanding of the data. 
 
-Below are the number of reviews per year and the number of unique products per year. The data includes headphone product/reviews from the year 2000 through mid 2014. As expected, we can see that the number of reviews per year has increased significantly year over year. But also the number of unique headphones sold through Amazon has increased significantly in the recent years.
+Below are the number of reviews per year and the number of unique products per year. The data includes headphone products/reviews from the year 2000 through mid-2014. As expected, we can see that the number of reviews per year has increased significantly year over year. But at the same time, the number of unique headphones sold through Amazon has risen remarkably in recent years.
  
  
 ![Reviews Per Year](../assets/img/amazon_reviews/Reviews_per_year.jpg){: .postImage}
