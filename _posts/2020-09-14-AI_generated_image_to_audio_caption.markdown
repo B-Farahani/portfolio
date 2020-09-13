@@ -53,14 +53,30 @@ I first cleaned the descriptions to reduce the size of the vocabulary of words, 
 - Removed all numbers 
 - Removed all words with less than two characters (e.g. "a")  **?
 
+## 2. Defining a fixed sequence length and starting/ending points
+The input sequences for all neural networks should have the same length (because we need to pack them all in a single tensor). So for example, when working with reviews text, they are usually truncated to a certain size. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data and used that as the fixed sequence length, which allows us to preserve all the information. In order to have the same length for all the captions, I padded the shorter ones with zeros. 
+
+The way that the final model works is that it will generate a caption one word a time. So we need to define a starting point to kick off the generation process. We also need an ending point to signal the end of the caption. The model will stop the generating new words if it reaches this stopping word or the maximum length. I did this with adding "startseq" and "endseq" to all the captions.
+
+To make this more concrete, below is an example for how the captions of the first image above were modified based on step 1 step 2:
+
+- **startseq** a child in a pink dress is climbing up a set of stairs in an entry way **endseq** 
+- **startseq** a girl going into a wooden building **endseq** 
+- **startseq** a little girl climbing into a wooden playhouse **endseq** 
+- **startseq** a little girl climbing the stairs to her playhouse **endseq** 
+- **startseq** a little girl in a pink dress going into a wooden cabin **endseq** 
+
+## 3. Removing the outliers
 This step reduced the number of unique words in the vocabulary from xx to xx.
-## 2. Defining a fixed sequence length and starting and ending points
-Generally, the input tensor for all neural networks should have the same length. For example, when working with reviews text, they are usually cut truncated to a certain size. For the case of captions, since they are not too long, I looked at the maximum caption length in the data and used that as the fixed sequence length, which allows us to preserve all the information. In order to have the same length for all the captions, I padded the shorter ones with zeros. 
 
-## 3. Word Embeddings 
+## 4. Tokenizing
+
+## 5. Word Embeddings 
 
 
-# Final Neural Network Model
+That was a lot of steps! To summarize, I cleaned the text, defined a fixed length and defined a starting point and stopping point for the model, removed the outliers, tokenized the words, and did the word embedding using a pre-trained GLoVE mode. Now that we have processed the images and text data, we are ready to feed them into the final model.
+
+# Final Neural Network Model Architecture 
 
 # Predicting the Captions
 
