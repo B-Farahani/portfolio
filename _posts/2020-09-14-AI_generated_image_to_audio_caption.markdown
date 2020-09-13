@@ -27,21 +27,38 @@ In order to generate meaningful captions, we need to train a model for both imag
 
 ![Sample Image and Captions](../assets/img/image_captions/Sample_Img&Caption2.jpg){: .postImage}
 **Captions:**
-- A black dog and a spotted dog are fighting. 
-- A black dog and a tri-colored dog playing with each other on the road. 
-- A black dog and a white dog with brown spots are staring at each other in the street. 
-- Two dogs of different breeds looking at each other on the road. 
-- Two dogs on pavement moving toward each other.
+
+- A person and their tan dog go for a ride in a rowboat.
+- A woman and a dog rowing down a wide river.
+- A woman wearing an orange jacket sitting in a canoe on a lake with a dog behind her.
+- A woman with a dog canoe down a river.
+- Woman and dog in rowboat on the water.
 
 # Processing Image data
 I used transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task. It is popular approach in deep learning where pre-trained models are used as a starting point and in fact, so much of the progress in deep learning over the past few years is attributable to availability of such pre-trained models. There are many of Convolutional Neural Network (CNN) pre-trained models available to choose from such as VGG16, ResNet50, Xception. For tis project, I used the InceptionV3, which was created by Google Research and trained on ImageNet dataset (1.4M images) that includes 1000 different image classes.
 
 I converted all the images to size 299x299 as required by InceptionV3 and passed them to the model to extract the 2048 lentgh feature vectors also known as the "bottleneck features". For a classification tax a Sofmax function would be applied after this steps perform the classification task To do this I froze the Base layers of the model to .... and avoid relearning the features. The below image illustrates the model, inputs (images) and the vector. I then used this vector as an input to merge with the processed text data (descriptions), but more on this later!
 
+Add a quick descprton of how the model words, freezing base and extrating before the Softmax is applied
+
 ![InceptionV3](../assets/img/image_captions/InceptionV3.jpg){: .postImage}
 
 # Processing Text data (Captions)
-To be able to analyse the descriptions, we first need to perform preprocessing . 
+To be able to analyse the descriptions ...
+
+## 1. Cleaning the Text
+I first cleaned the descriptions to reduce the size of the vocabulary of words, by the following ways: This is important because with having fewer words, we can create a smaller model which can be trained faster.
+- Converted all the words to lower case
+- Removed punctuations (e.g. "!", "-")
+- Removed all numbers 
+- Removed all words with less than two characters (e.g. "a")  **?
+
+This step reduced the number of unique words in the vocabulary from xx to xx.
+## 2. Defining a fixed sequence length and starting and ending points
+Generally, the input tensor for all neural networks should have the same length. For example, when working with reviews text, they are usually cut truncated to a certain size. For the case of captions, since they are not too long, I looked at the maximum caption length in the data and used that as the fixed sequence length, which allows us to preserve all the information. In order to have the same length for all the captions, I padded the shorter ones with zeros. 
+
+## 3. Word Embeddings 
+
 
 # Final Neural Network Model
 
@@ -51,9 +68,10 @@ To be able to analyse the descriptions, we first need to perform preprocessing .
 
 # Results
 
+lastly note that, if you use my code or if I run train the model again, the resulted captions will be slightly different, due to the stochastic nature of the model.
 # Conclusions 
 ...
-We were able to build a decent model to generate captions with training a neural network model on only 6000 images and captions. The model was strengthened by the power of the transferred learning (the InceptionV3 model for CNN and the GLoVE model for word-embedding), where the models were previously trained on very large image and text datasets. It should be noted that the testing images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs. Regardless of the model that we use, we cannot expect it to recognise fruits or flowers! On that note, for future work I would like to work with a larger dataset containing more types of images so that the model can make predictions for a wider type of images. I would also like to use a gp3 model instead of an LSTM model. However, for captions, which mostly contain factual and straight forward text as opposed to poetry or legal language, I don't expect a huge improvement.
+We were able to build a decent model to generate captions with training a neural network model on only 6000 images and captions. The model was strengthened by the power of the transferred learning (the InceptionV3 model for CNN and the GLoVE model for word-embedding), where the models were previously trained on very large image and text datasets. It should be noted that the testing images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs. Regardless of the model that we use, we cannot expect it to recognise fruits or flowers! On that note, for future work I would like to work with a larger dataset containing more types of images so that the model can make predictions for a wider type of images. I would also like to use a gp3 model instead of an LSTM model. However, for captions, which mostly contain factual and straight forward text as opposed to poetry or legal language, I don't expect a huge improvement. 
 
 If we are able to train a huge number of images and captions, and turn videos or high frequency images to speech. Using this, I hope that we can create an accessible technology that can easily translate images / videos to audio. Imagine you can't see! Now imagine your surrounding can be described to you!
 
