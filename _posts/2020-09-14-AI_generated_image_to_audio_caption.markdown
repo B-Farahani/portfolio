@@ -101,21 +101,25 @@ Now we are ready to move on to the modeling part, but that was a lot of steps, s
 
 # Final Neural Network Model Architecture 
 
-##1. Setting UP The Model
-Now that have processed both images and captions, we can feed them into the final neural network model. Since we have two inputs we have to use the Function API model (instead of the sequential model) which can take more than one input. The below figure illustrates the model and it's inout and output. 
+Now that have we processed both images and captions, we can feed them into the final neural network model and generate captions. I will explain below, but the simplified figure below shows the general architecture of the model, how it receives the text and image data, and how it generates captions.
 
 ![Final Model](../assets/img/image_captions/Final_model1.jpg){: .postImage}
 
-But let me explain the steps in a bit more detail:
+##1. Setting UP The Model
 
-**Input 1:** The first input of the model will be images that were converted into features vectors of 2048 length
+Since we have two inputs, we have to use the Functional API model, instead of the sequential model that can only receive one input. The steps to set up the model is as follows:
 
-**Input 2:** The second input of the model will be the text sequences which have a length of 40 and embedding dimension of 200. But we first need to feed this into an LSTM layer. LSTM (Long Short-Term Memory) is just a special recurrent network layer that can process sequences and understand the order of the words.
-**Merging the inputs:** Next we need to merge both data inputs and convert them to a single tensor and now we can feed this tensor to the functional API mode. Note that, to do the merge, we need to do make the output of the previous steps the same length. In this case, I converted those outputs 256-length.
-**Model:** So the model takes the tensor input of image and text data, and then I built two dense layers and a Softmax on top of the final layer (to convert the data in the previous layers into probabilities). I then fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss of the model. 
-**Output** The output of the model is a single vector, including probabilities for each of the 1600 unique words (which are conditioned on images). Then we can use this output to predict for the captions for images in the test data. I will explain how to that further down.
+**Input 1:** The first input of the model will be the features vectors of 2048 length that were extracted from the images.
 
-The below image was outputted by the model, it shows the input and output of each layer and the random drop outs that I used to avoid outfitting. 
+**Input 2:** The second input of the model will be the text sequences that each have a length of 40 and an embedding dimension of 200. But instead of feeding them directly into the model, we first need to feed them into an LSTM layer and then to the final model. LSTM (Long Short-Term Memory) is just a special recurrent network layer that can process sequences and understand the order of the words.
+
+**Merging the inputs:** Next we need to merge both data inputs and convert them into a single tensor that can be fed to the functional API model, but before merging, we need to convert the output of the previous steps to the same length. So I converted both inputs to the same length of 256.
+
+**Modeling:** Then the model takes in the tensor input of image and text data, and builds two more dense layers on top of it. Then we apply a Softmax function on top of the final layer (to convert the data in final layers into probabilities). After setting up this structure, I fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss of the model. 
+
+**Output** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is, 1600, is the same as the number of unique words in the data. In other words, each probability value represents the probability of predicting it's relative unique word. This means that these probability values are conditioned on images, so the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image with a with dog, than a for an image without a dog.
+
+The below image was outputted by the model, it shows the whole architecture that I just explained as well as the random dropouts that I used to avoid outfitting. 
 
 ![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
 
