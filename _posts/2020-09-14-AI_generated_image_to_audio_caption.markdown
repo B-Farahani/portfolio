@@ -13,7 +13,7 @@ Artificial intelligence has become a hot topic nowadays and it's being used by c
 
 - Ride-sharing apps, like Uber and Lyft
 - Food and groceries apps, like Grobhub and Instacart
-- Product or music Recommender engines use by many companies, like Amazon, Spotify, and Youtube
+- Product or music Recommender engines, use by many companies like Amazon, Spotify, and Youtube
 - Maps and direction apps, like Google Maps
 - Smart reply in Gmail 
 - Chatbots, implemented in many websites
@@ -21,15 +21,15 @@ Artificial intelligence has become a hot topic nowadays and it's being used by c
 
 Of course, it's not all unicorns and rainbows! Like any other technology, AI has it's downsides and can be misused, but let's focus on the positive here! On a personal level, AI has made our lives more efficient in many ways and will continue to do so. It has also significantly impacted and changed many industries while creating new opportunities, and will continue to do so!  
 
-For this project I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images using AI! Wait, can we really do that?? Yes! Doing something like this was inconceivable a few years ago, but the recent advancements in deep learning has made it possible. Generating captions or in other words, the ability to understand and describe an image, is definitely cool and exciting, but there are also many real world applications for it. For instance, for self-driving cars, where we need to understand what is on the road and around the car. Another example would be for CCTV cameras, where it would be great to understand what scenes are alarming to prevent crimes and protect people's lives. But my main motivation for picking up this project was to help the blinds and people with the visual impairments by creating a technology that converts images to captions, and then to speech. I will showcase that here, but to create a great tool, we will need to train a huge amount of data. 
+For this project I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images using AI! Wait, can we really do that?? Yes, we can! Doing something like this was inconceivable a few years ago, but the recent advancements in deep learning has made it possible. Generating captions or in other words, the ability to understand and describe an image, is cool and exciting, but there are also many real world applications for it. For instance, for self-driving cars, where we need to understand what is on the road and around the car. Another example would be for CCTV cameras, where it would be great to understand what scenes are alarming to quickly flag them to prevent crimes and protect people's lives. But my main motivation for picking up this project was to help the blinds and people with the visual impairments by creating a technology that converts images to captions, and then to speech. I will showcase how we can do that here, but to create a great tool, we will need to train a huge amount of data. 
 
-This project is rather complex and has many steps which I will in this post. The blow figure shows the overview, just to give you the big picture:
+This project is rather complex and has many steps which I will explain in this post. Below is an overview of the process, just to give you the big picture:
 
 ![Overview](../assets/img/image_captions/Itro_Pic.jpg){: .postImage}
 
 # Data 
 
-In order to generate meaningful captions, we need to train a model for both images and descriptions at the same time. For this project, I used the open source Flicker 8K from [Kaggle](https://www.kaggle.com/shadabhussain/flickr8k), which includes 8000 images and each image has five captions. I used 6000 images their descriptions for training and the rest for testing. Below are two sample image and their captions, used in the the training data. As you can see, the captions are describing the image slightly differently but are very similar. 
+In order to generate meaningful captions, we need to train a model for both images and their descriptions, at the same time. For this project, I used the open source Flicker 8K from [Kaggle](https://www.kaggle.com/shadabhussain/flickr8k), which includes 8,000 images and each image has five captions. I used 6,000 images and their captions for training and the rest for testing. To show you how the data looks like, I have included below two sample images and their captions. As you can see, each caption is describing the image slightly differently, but they are very similar because they are describing the same picture. Alternatively, we could just use one caption for each image, but having five captions provides for more training data and therefore more robust results.
 
 ![Sample Image and Captions](../assets/img/image_captions/Sample_Img&Caption1.jpg){: .postImage}
 **Captions:**
@@ -48,14 +48,15 @@ In order to generate meaningful captions, we need to train a model for both imag
 - A woman with a dog canoe down a river.
 - Woman and dog in rowboat on the water.
 
+So, we have two kinds of data: image and text
 # Processing Image data
-I used transferred learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task. It is popular approach in deep learning where pre-trained models are used as a starting point and in fact, so much of the progress in deep learning over the past few years is attributable to availability of such pre-trained models. There are many of Convolutional Neural Network (CNN) pre-trained models available to choose from such as VGG16, ResNet50, Xception. For tis project, I used the InceptionV3, which was created by Google Research and trained on ImageNet dataset (1.4M images) that includes 1000 different image classes.
+I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a another task. This is a popular approach in deep learning where pre-trained models are used as a starting point and in fact, so much of the progress in deep learning over the past few years is attributable to availability of such pre-trained models. There are many CNN pre-trained models available to choose from, such as VGG16, ResNet50, Xception. For tis project, I used InceptionV3, which is efficient and has a great accuracy. It was created by Google Research in 2014 and was trained on ImageNet dataset (1.4M images), including 1000 different image classes. 
 
-I converted all the images to size 299x299 as required by InceptionV3 and passed them to the model to extract the 2048 lentgh feature vectors also known as the "bottleneck features". For a classification tax a Sofmax function would be applied after this steps perform the classification task To do this I froze the Base layers of the model to .... and avoid relearning the features. The below image illustrates the model, inputs (images) and the vector. I then used this vector as an input to merge with the processed text data (descriptions), but more on this later!
-
-Add a quick description of how the model words, freezing base and extracting before the Softmax is applied: IncpetionV3 is a complex model, but in simple words ...
+I converted all the images to size 299x299, as required by InceptionV3 and passed them to the model as inputs. Then instead of training the model all over gain, I froze the base layers that are already trained to quickly learn the features for a given image, and extract the resulted feature vectors of 2048-length (also known as the "bottleneck features"). The below image shows inceptionV3's architecture, as well as the input and output.
 
 ![InceptionV3](../assets/img/image_captions/InceptionV3.jpg){: .postImage}
+
+Note that for a classification task a Softmax function would been applied after this steps and on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors to later combine them with the text data and create another model. 
 
 # Processing Text data (Captions)
 To be able to analyse the descriptions ...
