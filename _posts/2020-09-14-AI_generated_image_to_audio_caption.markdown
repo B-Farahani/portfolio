@@ -110,6 +110,8 @@ The below image was outputted by the model, it shows the input and output of eac
 
 ## Predicting Captions
 
+![Final Model](../assets/img/image_captions/Caption_pred_example.jpg){: .postImage}
+
 # Adding Speech
 
 To be updated soon!
