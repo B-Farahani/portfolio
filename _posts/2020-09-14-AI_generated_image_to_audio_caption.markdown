@@ -75,22 +75,64 @@ Next I removed the outlier words by removing the words that were repeated in the
 This step reduced the number of unique words in the vocabulary from xx to xx.
 
 ## 4. Tokenizing
+Next we need to tokenize the words and convert them to integers before feeding them into the model.  I broke down the sentences to words. After data cleaning and removing the outliers there ever 1600 unique words in the dataset, then I assigend a tokenized the words. In other words I assigned an integer to each unique word.
 
 ## 5. Word Embeddings 
 
-I used transferred learning again to do word embedding, while leveraging a model that was trained on a much larger text dataset than my data here, and extracted (semantically-meaningful) feature vectors from the captions. For this project I used Global Vectors for Word Representation (GloVe) with 200 word dimension. GloVe which is an unsupervised learning algorithm to obtain vector representation for words. In simple words, GloVe allows us to take a corpus of text and transform each word into a position in a high-dimensional space. In other words, using the precomputed word embeddings that is available in GloVe, I created an embedding matrix for all the 1600 unique words in the vocabulary. This embedding matrix will later be loaded into the final model before training.
+I used transferred learning again to do word embedding, while leveraging a model that was trained on a much larger text dataset than my data here, and extracted (semantically-meaningful) feature vectors from the captions. For this project I used Global Vectors for Word Representation (GloVe) with 200 word dimension. GloVe which is an unsupervised learning algorithm to obtain vector representation for words. In simple words, GloVe allows us to take a corpus of text and transform each word into a position in a high-dimensional space. In other words, using the precomputed word embeddings that is available in GloVe, I created an embedding matrix for all the 1600 unique words in the vocabulary. This embedding matrix will later be loaded into the final model before training. Note that if a word is in the our vocabulary but is not in GloVe, the values of the vectors for that word will be zeros.
 
-That was a lot of steps for processing the text data! To summarize, I cleaned the text, defined a fixed length and defined a starting point and stopping point for the model, removed the outliers, tokenized the words, and did the word embedding using a pre-trained GLoVE mode. Now that we have processed the images and text data, we are ready to feed them into the final model.
+To make this more clear, here's a toy example of how a sample captions will look like when being fed into the model:
+![Text tensor input example](../assets/img/image_captions/text_tensor_example.jpg){: .postImage}
+
+This was just an example and each caption will have a similar triangle Note that the numbers shown above are made up but they will numbers between 0 and 1 because they are probability values. Also, as discussed above, each captain will have a length of 40. 
+ 
+That was a lot of steps for processing the text data! To summarize, I cleaned the text, defined a fixed length and defined a starting point and stopping point for the model, removed the outliers, tokenized the words, and did the word embedding using a pre-trained GLoVE mode. 
+
+Now that we have processed the images and text data, we are ready to feed them into the final model.
 
 # Final Neural Network Model Architecture 
+Now that have processed both images and captions, we can feed them into the final neural network model. Since we have two inputs we have to use the Function API model (instead of the sequential model) which can take more than one input. The below figure illustrates the model and it's inout and output. 
 
-# Predicting the Captions
+![Final Model](../assets/img/image_captions/Final_model1.jpg){: .postImage}
+
+But let me explain the steps in a bit more detail:
+
+**Input 1:** The first input of the model will be images that were converted into features vectors of 2048 length
+
+**Input 2:** The second input of the model will be the text sequences which have a length of 40 and embedding dimension of 200. But we first need to feed this into an LSTM layer. LSTM (Long Short-Term Memory) is just a special recurrent network layer that can process sequences and understand the order of the words.
+**Merging the inputs:** Next we need to merge both data inputs and convert them to a single tensor and now we can feed this tensor to the functional API mode. Note that, to do the merge, we need to do make the output of the previous steps the same length. In this case, I converted those outputs 256-length.
+**Model:** So the model takes the tensor input of image and text data, and then I built two dense layers and a Softmax on top of the final layer (to convert the data in the previous layers into probabilities). I then fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss of the model. 
+**Output** The output of the model is a single vector, including probabilities for each of the 1600 unique words (which are conditioned on images). Then we can use this output to predict for the captions for images in the test data. I will explain how to that further down.
+
+The below image was outputted by the model, it shows the input and output of each layer and the random drop outs that I used to avoid outfitting. 
+
+![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
+
+## Predicting Captions
 
 # Adding Speech
 
 To be updated soon!
 
 # Results
+
+Blow are a few examples of the captions generated by the model
+
+![Little_boy_in_red](../assets/img/image_captions/Little_boy_in_red.jpg){: .postImage}
+
+**Caption: ** xxxx
+
+![People_image](../assets/img/image_captions/People_image.jpg){: .postImage}
+**Caption: ** xxxx
+
+![Boy_on_swing](../assets/img/image_captions/Boy_on_swing.jpg){: .postImage}
+
+**Caption: ** xxxx
+
+![Dog](../assets/img/image_captions/Dog.jpg){: .postImage}
+
+**Caption: ** xxxx
+
 
 lastly note that, if you use my code or if I run train the model again, the resulted captions will be slightly different, due to the stochastic nature of the model.
 # Conclusions 
