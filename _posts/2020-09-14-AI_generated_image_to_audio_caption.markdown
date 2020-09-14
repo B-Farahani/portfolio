@@ -9,12 +9,21 @@ tags: [Convolutional Neural Network, Deep Learning, Natural Language Processing,
 ---
 # Introduction
 
-Artificial intelligence has become a hot topic and maybe a buzzword nowadays and it's being used in all industries. There are many examples of great AI technologies that we use in everyday life, such as ride-sharing apps like Uber and Lyft, maps and direction apps like Google Maps, smart reply in Gmail, Chatbots, and fraud detection applications used in financial institutions. Of course, like any other technology, AI has it's downsides and can be misused, but let's focus on the positive here! Artificial intelligence has made our lives more efficient in many ways and will continue to do so.  
+Artificial intelligence has become a hot topic nowadays and it's being used by companies in all industries. There are many examples of great AI technologies that we use in our everyday lives, such as:
 
-For this project I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images using AI! Wait, can we really do that?? Yes! Although, doing something like this was inconceivable a few years ago, the recent advancements in deep learning has made it possible. Generating captions or in other words, the ability to understand and describe an image, is definitely cool and exciting, but there are also many real world applications for it. For instance, for self-driving cars, where we need to understand what is on the road and around the car. Another example would be for CCTV cameras, where it would be great to understand what scenes are alarming to prevent crimes and protect people's lives. But my main motivation for picking up this project was creating a technology that converts images to captions, and then to speech, to help the blinds or people with the visual impairments. 
+- Ride-sharing apps, like Uber and Lyft
+- Food and groceries apps, like Grobhub and Instacart
+- Product or music Recommender engines use by many companies, like Amazon, Spotify, and Youtube
+- Maps and direction apps, like Google Maps
+- Smart reply in Gmail 
+- Chatbots, implemented in many websites
+- Fraud detection applications, used in financial institutions 
 
+Of course, it's not all unicorns and rainbows! Like any other technology, AI has it's downsides and can be misused, but let's focus on the positive here! On a personal level, AI has made our lives more efficient in many ways and will continue to do so. It has also significantly impacted and changed many industries while creating new opportunities, and will continue to do so!  
 
-The blow picture shows the overview of the steps involved for this project whixh I'm going to explain in detail in the next sections.
+For this project I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images using AI! Wait, can we really do that?? Yes! Doing something like this was inconceivable a few years ago, but the recent advancements in deep learning has made it possible. Generating captions or in other words, the ability to understand and describe an image, is definitely cool and exciting, but there are also many real world applications for it. For instance, for self-driving cars, where we need to understand what is on the road and around the car. Another example would be for CCTV cameras, where it would be great to understand what scenes are alarming to prevent crimes and protect people's lives. But my main motivation for picking up this project was to help the blinds and people with the visual impairments by creating a technology that converts images to captions, and then to speech. I will showcase that here, but to create a great tool, we will need to train a huge amount of data. 
+
+This project is rather complex and has many steps which I will in this post. The blow figure shows the overview, just to give you the big picture:
 
 ![Overview](../assets/img/image_captions/Itro_Pic.jpg){: .postImage}
 
