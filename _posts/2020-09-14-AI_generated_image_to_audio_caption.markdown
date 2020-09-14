@@ -48,32 +48,31 @@ In order to generate meaningful captions, we need to train a model for both imag
 - A woman with a dog canoe down a river.
 - Woman and dog in rowboat on the water.
 
-So, we have two kinds of data: image and text
-# Processing Image data
-I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a another task. This is a popular approach in deep learning where pre-trained models are used as a starting point and in fact, so much of the progress in deep learning over the past few years is attributable to availability of such pre-trained models. There are many CNN pre-trained models available to choose from, such as VGG16, ResNet50, Xception. For tis project, I used InceptionV3, which is efficient and has a great accuracy. It was created by Google Research in 2014 and was trained on ImageNet dataset (1.4M images), including 1000 different image classes. 
+So, we have two kinds of data here: image and text. Before creating a neural network model, we need to preprocess and analyze them separately, and convert them to a format that the model can understand. I will explain how to do that in the next two sections of this post.
 
-I converted all the images to size 299x299, as required by InceptionV3 and passed them to the model as inputs. Then instead of training the model all over gain, I froze the base layers that are already trained to quickly learn the features for a given image, and extract the resulted feature vectors of 2048-length (also known as the "bottleneck features"). The below image shows inceptionV3's architecture, as well as the input and output.
+# Processing Image data
+I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a another task. This is a popular approach in deep learning where pre-trained models are used as a starting point and in fact, so much of the progress in deep learning over the past few years is attributable to availability of such pre-trained models. There are many pre-trained CNN models available to choose from, such as VGG16, ResNet50, Xception. For tis project, I used InceptionV3, which is efficient and has great accuracy. It was created by Google Research in 2014 and was trained on ImageNet dataset (1.4M images), including 1000 different image classes. 
+
+I converted all the images to size 299x299, as required by InceptionV3 and passed them to the model as inputs. Then instead of training the model all over gain, I froze the base layers that are already trained to quickly learn the features for a given image, and extracted the resulted feature vectors of 2,048-length (also known as the "bottleneck features"). The below image shows inceptionV3's architecture, as well as its input and output.
 
 ![InceptionV3](../assets/img/image_captions/InceptionV3.jpg){: .postImage}
 
-Note that for a classification task a Softmax function would been applied after this steps and on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors to later combine them with the text data and create another model. 
+Note that for a classification task a Softmax function could been applied after this steps and on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors to later combine them with the text data and create train a neural network model. 
 
-# Processing Text data (Captions)
-To be able to analyse the descriptions ...
+# Processing Text Data (Captions)
+I performed the following five steps on the text data:
 
 ## 1. Cleaning the Text
-I first cleaned the descriptions to reduce the size of the vocabulary of words, by the following ways: This is important because with having fewer words, we can create a smaller model which can be trained faster.
+I first cleaned the descriptions by performing the following steps, to remove noise and reduce the size of the vocabulary of words. This makes the model smaller and so it can be trained faster.
 - Converted all the words to lower case
 - Removed punctuations (e.g. "!", "-")
 - Removed all numbers 
 - Removed all words with less than two characters (e.g. "a")  **?
 
 ## 2. Defining a fixed sequence length and starting/ending points
-The input sequences for all neural networks should have the same length (because we need to pack them all in a single tensor). So for example, when working with reviews text, they are usually truncated to a certain size. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data , which was 40, and used that as the fixed sequence length, which allows us to preserve all the information. In order to have the same length for all the captions, I padded the shorter ones with zeros. 
+Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
 
-The way that the final model works is that it will generate a caption one word a time. So we need to define a starting point to kick off the generation process. We also need an ending point to signal the end of the caption. The model will stop the generating new words if it reaches this stopping word or the maximum length. I did this with adding "startseq" and "endseq" to all the captions.
-
-To make this more concrete, below is an example for how the captions of the first image above were modified based on step 1 step 2:
+The way that the final model works is that it will generate a caption, one word a time. So we need to define a starting point to kick off the generating process. We also need an ending point to signal the end of the caption. Then the model will stop generating new words if it reaches this stopping word or the maximum length of 40. So, I added "startseq" to the beginning and "endseq" to the end of all the captions, to train the model with these starting and ending points. To make this more clear, below is an example of how the captions will look like after this step (the captions are from the first data example above):
 
 - **startseq** a child in a pink dress is climbing up a set of stairs in an entry way **endseq** 
 - **startseq** a girl going into a wooden building **endseq** 
@@ -83,25 +82,22 @@ To make this more concrete, below is an example for how the captions of the firs
 
 ## 3. Removing the outliers
 
-Next I removed the outlier words by removing the words that were repeated in the entire vocabulary of data less than 10 times. This is not a mandatory step, but removing the outliers, not only results in a better prediction, but it helps with saving the memory: The data has 6000 images, and each image has 5 captions, and if each caption has 10 word. and after adding embedding, this will make for 6,000*5*10*300=90,000,000. that is only the text data!
-
-This step reduced the number of unique words in the vocabulary from xx to xx.
+Next I removed the words that were repeated in the entire data less than 10 times. This is not a mandatory step, but removing the outliers, saves a lot of memory, makes the model faster, and will help us get achieve better results.
 
 ## 4. Tokenizing
-Next we need to tokenize the words and convert them to integers before feeding them into the model.  I broke down the sentences to words. After data cleaning and removing the outliers there ever 1600 unique words in the dataset, then I assigend a tokenized the words. In other words I assigned an integer to each unique word.
+
+Next we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and after data cleaning and removing the outliers there ever 1600 unique words in the dataset. Then I tokenized the words by assigning an integer to each unique word. I will show an example of this later.
 
 ## 5. Word Embeddings 
 
-I used transferred learning again to do word embedding, while leveraging a model that was trained on a much larger text dataset than my data here, and extracted (semantically-meaningful) feature vectors from the captions. For this project I used Global Vectors for Word Representation (GloVe) with 200 word dimension. GloVe which is an unsupervised learning algorithm to obtain vector representation for words. In simple words, GloVe allows us to take a corpus of text and transform each word into a position in a high-dimensional space. In other words, using the precomputed word embeddings that is available in GloVe, I created an embedding matrix for all the 1600 unique words in the vocabulary. This embedding matrix will later be loaded into the final model before training. Note that if a word is in the our vocabulary but is not in GloVe, the values of the vectors for that word will be zeros.
+The next step is doing word embedding. I used transfer learning again to do word embedding to leverage a model that was trained on a much larger text data, and extracted (semantically-meaningful) feature vectors from the captions. For this project I used Global Vectors for Word Representation (GloVe) with 200 word dimension. GloVe is an unsupervised learning algorithm for obtaining vector representation for words. In simple words, GloVe allows us to take a corpus of text and transform each word into a position in a high-dimensional space. 
 
-To make this more clear, here's a toy example of how a sample captions will look like when being fed into the model:
+In other words, using the precomputed word embeddings that is available in GloVe, I created an embedding matrix for all the 1600 unique words in my data. This embedding matrix will later be loaded into the final model before training. Note that if a word is in our data but is not in GloVe, the values of the vectors for that word will be zeros. To make this more concrete, here's an example of how a sample captions will look like when being fed into the model. Note that, the example shows the words here, but as mentioned in the Tokenizing step, they will be represented by integers:
 ![Text tensor input example](../assets/img/image_captions/text_tensor_example.jpg){: .postImage}
 
-This was just an example and each caption will have a similar triangle Note that the numbers shown above are made up but they will numbers between 0 and 1 because they are probability values. Also, as discussed above, each captain will have a length of 40. 
- 
-That was a lot of steps for processing the text data! To summarize, I cleaned the text, defined a fixed length and defined a starting point and stopping point for the model, removed the outliers, tokenized the words, and did the word embedding using a pre-trained GLoVE mode. 
+This was just an example for a single captions. Each caption will have a triangle like this with their relative numbers. Note that the numbers shown above are just examples, but the numbers will be between 0 and 1, because they are probability values.  
 
-Now that we have processed the images and text data, we are ready to feed them into the final model.
+Now we are ready to move on to the modeling part, but that was a lot of steps, so just to summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending point to each caption, 3) removed the outliers, 4) tokenized the words, and finally 4) embedded the words using a pre-trained GLoVE model.
 
 # Final Neural Network Model Architecture 
 
