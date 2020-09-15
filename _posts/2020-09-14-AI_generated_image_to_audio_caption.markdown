@@ -142,7 +142,7 @@ First, we need to initiate a caption (a string) that only includes "startseq" as
    
 **Iteration 7:** Then the model receives the **image + "startseq little girl climbing into wooden playhouse"**  as input and predicts the next word, which is **"endseq"**. This gives the model the signal to stop predicting. As mentioned before, the model will stop predicting when reaching the maximum length of 40 or reaching the word, "endseq", whichever happens first. 
 
-# Adding Speech
+# Converting to Speech
 
 To be updated soon!
 
