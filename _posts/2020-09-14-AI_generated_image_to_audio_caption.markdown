@@ -97,7 +97,7 @@ In other words, using the precomputed word embeddings available in GloVe, I crea
 
 This was just an example for a single caption. Each caption will have a triangle like this with their relative numbers. The numbers shown above are just examples, but the numbers will be between 0 and 1  because they are probability values.  
 
-That was a lot of preprocessing steps, so let me summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending point to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVE model.
+That was a lot of preprocessing steps, so let me summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending word to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVE model.
 
 # Final Neural Network Model Architecture 
 
