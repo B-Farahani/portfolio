@@ -130,12 +130,16 @@ We can generate captions using the output of the model in conjunction with a for
 
 ![Caption Prediction Example](../assets/img/image_captions/Caption_pred_example.jpg){: .postImage}
 
-First, we need to initiate a caption (a string) that only includes "startseq" as its first word. Then we can predict the next words of the caption using a "For loop" as follows:
+First, we need to initiate a caption (a string) that only includes "startseq" as its first word. Then we can predict the next words of the caption using a for-loop as follows:
 
 **Iteration 1:** The model receives the **image + "startseq"** as input and predicts the next word, **"little"**, using the output (image and text vector) discussed above.
+
 **Iteration 2:** Then the model receives the **image + "startseq little"** as input and predicts the next word, **"girl"**.
+
     .
     .
+    .
+
 **Iteration 7:** Then the model receives the **image + "startseq little girl climbing into wooden playhouse"**  as input and predicts the next word, which is **"endseq"**. This gives the model the signal to stop predicting. As mentioned before, if the model will stop predicting when reaching the maximum length of 40 or reaching the word, "endseq", whichever happens first. 
 
 # Adding Speech
