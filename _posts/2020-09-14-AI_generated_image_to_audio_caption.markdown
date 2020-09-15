@@ -57,7 +57,7 @@ I converted all the images to size 299x299, as required by InceptionV3, and pass
 
 ![InceptionV3](../assets/img/image_captions/InceptionV3.jpg){: .postImage}
 
-Note that for a classification task a Softmax function could be applied after this layer, on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors. We will later combine them with the text data and train a neural network model. 
+Note that for a classification task, a Softmax function can be applied after this layer, on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors, which we will later combine with the text data and train a neural network model. 
 
 # Processing Text Data (Captions)
 I performed the following five steps on the text data:
