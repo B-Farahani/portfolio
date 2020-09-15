@@ -13,10 +13,10 @@ Artificial intelligence has become a hot topic nowadays and it's being used by c
 
 - Ride-sharing apps, like Uber and Lyft
 - Food and groceries apps, like GrubHub and Instacart
-- Product or music Recommender engines, use by many companies like Amazon, Spotify, and Youtube
-- Maps and direction apps, like Google Maps
+- Recommender engines used by many companies like Amazon, Spotify, and Youtube
+- Map and direction apps, like Google Maps
 - Smart Reply in Gmail 
-- Chatbots, implemented in many websites
+- Chatbots available on many apps and websites
 - Fraud detection applications, used in financial institutions 
 
 Of course, its not all unicorns and rainbows! Like any other technology, AI has it's downsides and can be misused, but let's focus on the positive here! On a personal level, AI has made our lives more efficient in many ways and will continue to do so. It has also significantly impacted many industries while creating new opportunities, and will continue to do so!  
