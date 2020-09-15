@@ -9,7 +9,7 @@ tags: [Convolutional Neural Network, Deep Learning, Natural Language Processing,
 ---
 # Introduction
 
-Artificial intelligence has become a hot topic nowadays and it's being used by companies in all industries. There are many examples of great AI technologies that we use in our everyday lives, such as:
+Artificial intelligence (AI) has become a hot topic nowadays and it's being used by companies in all industries. There are many examples of great AI technologies that we use in our everyday lives, such as:
 
 - Ride-sharing apps, like Uber and Lyft
 - Food and groceries apps, like GrubHub and Instacart
