@@ -50,7 +50,7 @@ To generate meaningful captions, we need to train a model for both images and th
 
 As you can see, we have two kinds of data here: image and text. Before creating a neural network model, we need to preprocess and analyze images and captions separately and convert them to a format that the model can understand. I will explain how to do this in the next two sections.
 
-# Processing Image data
+# Preprocessing Image data
 I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on another task. This is a popular approach in deep learning, and in fact, so much of the progress in deep learning over the past few years is attributable to the availability of such pre-trained models. There are many pre-trained CNN models available to choose from (e.g. VGG16, ResNet50, Xception). For this project, I used InceptionV3, which is efficient and has great accuracy. This model was created by Google Research in 2014 and it was trained on ImageNet dataset (which contains 1.4M images and 1,000 image classes).
 
 I converted all the images to size 299x299, as required by InceptionV3, and passed them to the model as inputs. Then instead of training the model all over again, I froze the base layers that are already trained to quickly learn the features for a given image and extracted the resulted feature vectors of 2,048-length (also known as the "bottleneck features"). This is common practice when using pre-trained models. The below image shows inceptionV3's architecture, as well as its input image and output.
@@ -59,7 +59,7 @@ I converted all the images to size 299x299, as required by InceptionV3, and pass
 
 Note that for a classification task, a Softmax function can be applied after this layer, on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors, which we will later combine with the text data and train a neural network model. 
 
-# Processing Captions (Text Data)
+# Preprocessing Captions (Text Data)
 I performed the following five preprocessing steps on the text data:
 
 ## 1. Cleaning the Text
@@ -68,10 +68,7 @@ I first cleaned the descriptions by performing the following steps, to remove no
 - Removed punctuations (e.g. "!", "-")
 - Removed all numbers 
 
-## 2. Defining a fixed sequence length and starting/ending points
-Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
-
-The way that the final model works is that it will generate a caption, one word a time. So we need to define a starting point to kick off the generating process. We also need an ending point to signal the end of the caption. Then we can ask the model to stop generating new words if it reaches this stopping word or the maximum length of 40. To train the model with these starting and ending points, I added "startseq" to the beginning and "endseq" to the end of all the captions. To make this more clear, below is an example of how the captions will look like after this step (the captions are from the first data example above):
+## 2. Defining a fixed sequence length and starting/ending pointsThe way that the final model works is that it will generate a caption, one word a time. So we need to define a starting signal to kick off the generating process. We also need an ending signal to stop the process. Then we can ask the model to stop generating new words if it reaches this signal or a maximum length, which I will explain later. So, I added "startseq" to the beginning and "endseq" to the end of all the captions in the training data. Here's an example of how the captions for the first image above, will be modified after this step:
 
 
 - **startseq** a child in a pink dress is climbing up a set of stairs in an entry way **endseq** 
@@ -79,6 +76,8 @@ The way that the final model works is that it will generate a caption, one word 
 - **startseq** a little girl climbing into a wooden playhouse **endseq** 
 - **startseq** a little girl climbing the stairs to her playhouse **endseq** 
 - **startseq** a little girl in a pink dress going into a wooden cabin **endseq** 
+
+Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
 
 ## 3. Removing the outliers
 
