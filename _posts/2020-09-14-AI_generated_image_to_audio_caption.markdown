@@ -126,7 +126,7 @@ The below image was plotted by the model, it shows the architecture that I just 
 
 ## 2. Generate Captions
 
-We can generate captions using the output of the model in conjunction with a "For loop". Let me explain this via an example which is also illustrated in the figure below. 
+We can generate captions using the output of the model in conjunction with a for-loop. Let me explain this via an example which is also illustrated in the figure below. 
 
 ![Caption Prediction Example](../assets/img/image_captions/Caption_pred_example.jpg){: .postImage}
 
