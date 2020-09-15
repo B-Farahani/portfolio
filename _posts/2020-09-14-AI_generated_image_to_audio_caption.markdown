@@ -90,15 +90,15 @@ Next, we need to tokenize the words and convert them to integers before feeding 
 
 ## 5. Word Embeddings 
 
-The next step is doing word embedding. I used transfer learning again to do word embedding to leverage a model that was trained on a much larger text data, and extracted (semantically-meaningful) feature vectors from the captions. For this project, I used Global Vectors for Word Representation (GloVe) with 200-dimension. GloVe is an unsupervised learning algorithm for obtaining vector representation for words. In simple words, GloVe allows us to take a corpus of text and transform each word into a position in a high-dimensional space. 
+The next step is doing word embedding. I used transfer learning again to do word embedding to leverage a model that was trained on a much larger text data, and extracted (semantically-meaningful) feature vectors from the captions. For this project, I used Global Vectors for Word Representation (GloVe) with 200-dimension. GloVe is an unsupervised learning algorithm for obtaining vector representation for words. In simple words, it allows us to take a corpus of text and transform each word into a position in a high-dimensional space. 
 
-In other words, using the precomputed word embeddings available in GloVe, I created an embedding matrix for all the 1600 unique words in my data. This embedding matrix will later be loaded into the final model before training. Note that if a word is in our data but is not in GloVe, the values of the vectors for that word will be zeros. To make this more concrete, here's an example of how a sample captions will look like when being fed into the model. Also, I'm showing the words here, but as mentioned in the Tokenizing step, they will be represented by integers:
+In other words, using the precomputed word embeddings available in GloVe, I created an embedding matrix for all the 1600 unique words in my data. This embedding matrix will later be loaded into the final model before training. Note that if a word is in our data but is not in GloVe, the values of the vectors for that word will be zeros. To make this more concrete, here's an example of how a sample captions will look like when being fed into the model. Note, I'm showing the words here for the sake of clarity, but as mentioned in the Tokenizing step, they will be represented by integers:
 
 ![Text tensor input example](../assets/img/image_captions/text_tensor_example.jpg){: .postImage}
 
-This was just an example for a single caption. Each caption will have a triangle like this with their relative numbers. Note that the numbers shown above are just examples, but the numbers will be between 0 and 1  because they are probability values.  
+This was just an example for a single caption. Each caption will have a triangle like this with their relative numbers. The numbers shown above are just examples, but the numbers will be between 0 and 1  because they are probability values.  
 
-Now we are ready to move on to the modeling part, but that was a lot of steps for preprocessing the test data, so to summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending point to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVE model.
+That was a lot of preprocessing steps, so let me summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending point to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVE model.
 
 # Final Neural Network Model Architecture 
 
