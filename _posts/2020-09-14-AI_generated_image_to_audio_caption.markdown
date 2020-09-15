@@ -60,14 +60,13 @@ I converted all the images to size 299x299, as required by InceptionV3, and pass
 Note that for a classification task, a Softmax function can be applied after this layer, on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors, which we will later combine with the text data and train a neural network model. 
 
 # Processing Captions (Text Data)
-I performed the following five steps on the text data:
+I performed the following five preprocessing steps on the text data:
 
 ## 1. Cleaning the Text
 I first cleaned the descriptions by performing the following steps, to remove noise and reduce the size of the vocabulary of words. This makes the model smaller and faster to train.
 - Converted all the words to lower case
 - Removed punctuations (e.g. "!", "-")
 - Removed all numbers 
-- Removed all words with less than two characters (e.g. "a")  **?
 
 ## 2. Defining a fixed sequence length and starting/ending points
 Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
