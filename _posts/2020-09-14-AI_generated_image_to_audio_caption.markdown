@@ -124,7 +124,7 @@ The below image was plotted by the model, it shows the architecture that I just 
 
 ![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
 
-##2. Generate Captions
+## 2. Generate Captions
 
 We can generate captions using the output of the model in conjunction with a "For loop". Let me explain this via an example which is also illustrated in the figure below. 
 
