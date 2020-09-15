@@ -120,7 +120,7 @@ Since we have two inputs, we have to use the Functional API model, instead of th
 
 **Output** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is 1698, which is the same as the number of unique words in the data. In other words, each probability value represents the probability of predicting its relative unique word. These probability values are conditioned on images, meaning that the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image showing a dog, than for an image not showing a dog.
 
-The below image was plotted by the model, it shows the architecture that I just explained, as well as the random dropouts that I used in different layers to avoid outfitting.  
+The below image was plotted by the model, it shows the architecture that I just explained, as well as the random dropouts that I used in different layers to avoid overfitting.  
 
 ![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
 
