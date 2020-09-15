@@ -32,8 +32,8 @@ This project is rather complex and has many steps, which I will explain in this 
 To generate meaningful captions, we need to train a model for both images and their descriptions, at the same time. For this project, I used the open-source Flicker 8K dataset from [Kaggle](https://www.kaggle.com/shadabhussain/flickr8k), which includes 8,000 images and five captions for each image. I used 6,000 images and their captions for training and the rest for testing. To show you how the data looks like, I have included below two sample images and their captions. As you can see, each caption is describing the image slightly differently, but the captions are very similar because they are describing the same picture! Alternatively, we can use one caption for each image, but having five captions provides for more training data and so more robust results.
 
 ![Sample Image and Captions](../assets/img/image_captions/Sample_Img&Caption1.jpg){: .postImage}
-**Captions:**
-- A child in a pink dress is climbing up a set of stairs in an entry way.
+
+            - A child in a pink dress is climbing up a set of stairs in an entry way.
 - A girl going into a wooden building.
 - A little girl climbing into a wooden playhouse.
 - A little girl climbing the stairs to her playhouse.
