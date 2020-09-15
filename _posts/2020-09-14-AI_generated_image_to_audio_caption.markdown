@@ -85,7 +85,7 @@ Next, I removed the words with a frequency of less than 10 times. This step is n
 
 ## 4. Tokenizing
 
-Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there ever 1698 unique words/tokens in the dataset.
+Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there were 1698 unique words/tokens in the dataset.
 
 ## 5. Word Embeddings 
 
