@@ -117,7 +117,7 @@ Since we have two inputs, we have to use the Functional API model, instead of th
 
 **Modeling:** Then the model takes in the tensor input of image and text data, and builds two more dense layers on top of it. Then we apply a Softmax function on top of the final layer (to convert the data in final layers into probabilities). After setting up this structure, I fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss. 
 
-**Output:** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is 1698, which is the same as the number of unique words in the data. In other words, each probability value represents the probability of predicting its relative unique word. These probability values are conditioned on images, meaning that the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image showing a dog, than for an image not showing a dog.
+**Output:** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is 1,698, which is the same as the number of unique words in the data. In other words, each probability value represents the probability of predicting its relative unique word. These probability values are conditioned on images, meaning that the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image showing a dog, than for an image not showing a dog.
 
 The below image was plotted by the model, it shows the architecture that I just explained, as well as the random dropouts that I used in different layers to avoid overfitting.  
 
@@ -131,7 +131,7 @@ We can generate captions using the output of the model in conjunction with a for
 
 First, we need to initiate a caption (a string) that only includes "startseq" as its first word. Then we can predict the next words of the caption using a for-loop as follows:
 
-**Iteration 1:** The model receives the **image + "startseq"** as input and predicts the next word, **"little"**, using the output (image and text vector) discussed above.
+**Iteration 1:** The model receives the **image + "startseq"** as input and predicts the next word, **"little"**, using the model output (image and text vector) discussed above.
 
 **Iteration 2:** Then the model receives the **image + "startseq little"** as input and predicts the next word, **"girl"**.
 
