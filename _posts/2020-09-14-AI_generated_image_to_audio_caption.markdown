@@ -69,7 +69,7 @@ I first cleaned the descriptions by performing the following steps, to remove no
 - Removed all numbers 
 
 ## 2. Defining a fixed sequence length and starting/ending points
-The way that the final model works is that it will generate a caption, one word a time. So we need to define a starting signal to kick off the generating process. We also need an ending signal to stop the process. Then we can ask the model to stop generating new words if it reaches this signal or a maximum length, which I will explain later. So, I added "startseq" to the beginning and "endseq" to the end of all the captions in the training data. Here's an example of how the captions for the first image above, will be modified after this step:
+The way that the final model works is that it will generate a caption, one word a time. So we need to create a starting signal to kick off the generating process. We also need an ending signal to stop the process. Then we can ask the model to stop generating new words if it reaches this signal or a maximum length, which I will explain later. So, I added "startseq" to the beginning and "endseq" to the end of all the captions in the training data. Here's an example of how the captions (from the first image above) will be modified after this step:
 
 
 - **startseq** a child in a pink dress is climbing up a set of stairs in an entry way **endseq** 
@@ -82,11 +82,11 @@ Generally, the input sequences for a neural network model should have the same l
 
 ## 3. Removing the outliers
 
-Next, I removed the words with a frequency of less than 10 times. This step is not mandatory, but removing the outliers, saves a lot of memory, makes the model faster, and will help us to achieve better results.
+Next, I removed the words with a frequency of less than 10 times. This step is not mandatory, but removing the outliers saves a lot of memory, makes the model faster, and will help us to achieve better results.
 
 ## 4. Tokenizing
 
-Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there ever 1600 unique words/tokens in the dataset.
+Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there ever 1698 unique words/tokens in the dataset.
 
 ## 5. Word Embeddings 
 
