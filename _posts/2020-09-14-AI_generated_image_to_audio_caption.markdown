@@ -3,7 +3,7 @@ layout: post
 title: AI Generated Image to Audio Captions
 date: 2020-09-14 18:32:20 +0300
 description: Creating audio image captions using artificial intelligence.
-img: image_captions/image_captions_cover_photo2.jpg # Add image post (optional)
+img: image_captions/image_captions_cover_photo.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Convolutional Neural Network, Deep Learning, Natural Language Processing, CNN, RNN, LSTM, NLP]
 ---
