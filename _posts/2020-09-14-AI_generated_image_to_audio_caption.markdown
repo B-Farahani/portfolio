@@ -77,7 +77,7 @@ The way that the final model works is that it will generate a caption, one word 
 - **startseq** a little girl climbing the stairs to her playhouse **endseq** 
 - **startseq** a little girl in a pink dress going into a wooden cabin **endseq** 
 
-Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
+Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length since it is not too long. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
 
 ## 3. Removing the outliers
 
