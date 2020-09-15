@@ -169,7 +169,7 @@ We were able to build a decent model to generate captions with training a neural
 
 # Future Work
 
-For future work, I would like to work with a larger dataset containing more types of images so that the model can make predictions for more image classes. I would also like to use a gp3 model instead of an LSTM model. However, for captions, which mostly contain factual and straight forward text as opposed to poetry or legal language, I don't expect gp3 will make a huge improvement. 
+For future work, I would like to work with a larger dataset containing more types of images so that the model can make predictions for more image classes. I would also like to use a GPT-2 model instead of an LSTM model. However, for captions, which mostly contain factual and straight forward text as opposed to poetry or legal language, I don't expect GPT-2 will make a huge improvement. 
 
 You can see my code on my Github repo. Note that, if you use my code or if I run train the model again, the resulted captions will be slightly different, due to the stochastic nature of the model.
 
