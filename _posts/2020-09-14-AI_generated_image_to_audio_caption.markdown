@@ -107,7 +107,7 @@ Now that we have preprocessed both images and captions, we can feed them into th
 
 ![Final Model](../assets/img/image_captions/Final_model1.jpg){: .postImage}
 
-##1. Setting UP The Model
+# 1. Setting UP The Model
 
 Since we have two inputs, we have to use the Functional API model, instead of the Sequential model that can only receive one input. The steps to set up the model is as follows:
 
