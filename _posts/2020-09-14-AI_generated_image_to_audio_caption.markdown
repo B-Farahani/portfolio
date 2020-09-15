@@ -68,7 +68,7 @@ I first cleaned the descriptions by performing the following steps, to remove no
 - Removed all numbers 
 
 ## 2. Defining a fixed sequence length and starting/ending points
-The way that the final model works is that it will generate a caption, one word a time. So we need to create a starting signal to kick off the generating process. We also need an ending signal to stop the process. Then we can ask the model to stop generating new words if it reaches this signal or a maximum length, which I will explain later. So, I added "startseq" to the beginning and "endseq" to the end of all the captions in the training data. Here's an example of how the captions (from the first image above) will be modified after this step:
+The way that the final model works is that it will generate a caption, one word a time. So we need to create a starting signal to kick off the generating process. We also need an ending signal to stop the process. Then we can ask the model to stop generating new words if it reaches this signal or a maximum length, which I will explain later. So, I added "startseq" to the beginning and "endseq" to the end of all the captions in the training data. Here's an example of how the captions (from the first image above) were modified after this step:
 
 
 - **startseq** a child in a pink dress is climbing up a set of stairs in an entry way **endseq** 
