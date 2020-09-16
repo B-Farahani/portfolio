@@ -60,7 +60,7 @@ I converted all the images to size 299x299, as required by InceptionV3, and pass
 Note that for a classification task, a Softmax function can be applied after this layer, on top of the feature vectors to classify images. But for the task at hand, we only need the feature vectors, which we will later combine with the text data and pass to a neural network model as input. 
 
 # Preprocessing Captions (Text Data)
-I performed the following five preprocessing steps on the text data:
+I performed the following preprocessing steps on the text data:
 
 ## 1. Cleaning the Text
 I first cleaned the descriptions by performing the following steps, to remove noise and reduce the size of the vocabulary of words. This makes the model smaller and faster to train.
