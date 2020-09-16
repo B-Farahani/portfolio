@@ -122,7 +122,7 @@ Since we have two inputs, we have to use the Functional API model, instead of th
 
 The below image was plotted by the model, it shows the architecture that I just explained, as well as the random dropouts that I used in different layers to avoid overfitting.  
 
-![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
+![Final Model2](../assets/img/image_captions/Final_model3.jpg){: .postImage}
 
 ## 2. Generating Captions
 
