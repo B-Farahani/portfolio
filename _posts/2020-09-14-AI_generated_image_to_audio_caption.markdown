@@ -178,6 +178,8 @@ For future work, I would like to work with a larger dataset containing more type
 
 You can see my code on my Github repo. Note that due to the stochastic nature of the model, if you use my code or even if I run my model again, the resulted captions will be slightly different. Also, it should be noted that to generate captions for new images, the images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs and not fruits or flowers!
 
+Hope you enjoyed this post!
+
 
 
 
