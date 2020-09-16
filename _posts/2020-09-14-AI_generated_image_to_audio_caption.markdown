@@ -63,7 +63,7 @@ Note that for a classification task, a Softmax function can be applied after thi
 I performed the following preprocessing steps on the text data:
 
 ## 1. Cleaning the Text
-I first cleaned the descriptions by performing the following steps, to remove noise and reduce the size of the vocabulary of words. This makes the model smaller and faster to train.
+I first cleaned the captions to remove noise and reduce the size of the vocabulary of words. This makes the model smaller and faster to train.
 - Converted all the words to lower case
 - Removed punctuations (e.g. "!", "-")
 - Removed all numbers 
