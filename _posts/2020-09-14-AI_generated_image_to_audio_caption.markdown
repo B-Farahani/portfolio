@@ -114,7 +114,7 @@ Since we have two inputs, we have to use the Functional API model, instead of th
 
 **Input 2:** The second input of the model will be the text sequences, each having a length of 40 and an embedding dimension of 200. But instead of feeding sequences directly into the model, we first need to feed them into an LSTM layer and then to the final model. LSTM (Long Short-Term Memory) is just a special recurrent network layer that can process sequences and understand the order of the words.
 
-**Merging the inputs:** Next, we need to merge both data inputs and convert them into a single tensor that can be fed to the functional API model, but before merging, we need to convert the output of the previous steps to the same length. So I converted both inputs to the same length of 256.
+**Merging the inputs:** Next, we need to merge both data inputs and convert them into a single tensor that can be fed into the functional API model, but before merging, we need to convert the output of the previous steps to the same length. So I converted both inputs to the same length of 256.
 
 **Modeling:** Then the model takes in the tensor input of image and text data, and builds two more dense layers on top of it. Then we apply a Softmax function on top of the final layer (to convert the data in final layers into probabilities). After setting up this structure, I fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss. 
 
@@ -124,7 +124,7 @@ The below image was plotted by the model, it shows the architecture that I just 
 
 ![Final Model](../assets/img/image_captions/Final_model2.jpg){: .postImage}
 
-## 2. Generate Captions
+## 2. Generating Captions
 
 We can generate captions using the output of the model in conjunction with a for-loop. Let me explain this via an example which is also illustrated in the figure below. 
 
