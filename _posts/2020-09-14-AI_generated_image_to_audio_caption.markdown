@@ -24,6 +24,7 @@ Of course, its not all unicorns and rainbows! Like any other technology, AI has 
 For this project, I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images. Wait, can we do that? Yes, we can! Even though doing something like this was inconceivable a few years ago, the recent advancements in deep learning have made it possible. Generating captions, which is basically the ability to understand and describe an image, is thrilling, but there are also many real-world applications for it. For instance for self-driving cars, where "the car" needs to understand what is on the road and around it. Another example would be CCTV cameras, where we ideally want to recognize the alarming situations quickly to prevent crimes and accidents. But my main motivation for picking up this project was to help the blinds and people with the visual impairments by creating a technology that converts images to captions and then to audio. 
 
 I did this project using Python and Keras and will explain the data and process in this post. Here's an overview of the process:
+
 ![Overview](../assets/img/image_captions/Itro_Pic.jpg){: .postImage}
 
 # Data 
