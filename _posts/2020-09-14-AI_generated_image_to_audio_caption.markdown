@@ -100,7 +100,7 @@ This was just an example for a single caption. Each caption will have a "triangl
 
 That was a lot of preprocessing steps, so let me summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending word to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVE model.
 
-# Final Neural Network Model Architecture 
+# Neural Network Model and Generating Captions 
 
 Now that we have preprocessed both images and captions, we can feed them into the final neural network model and generate captions. The simplified figure below shows the general architecture of the model, how it receives the text and image data, and how it generates captions.
 
