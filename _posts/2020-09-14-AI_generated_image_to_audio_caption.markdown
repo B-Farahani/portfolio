@@ -19,11 +19,11 @@ Artificial intelligence (AI) has become a hot topic nowadays and it's being used
 - Chatbots available on many apps and websites
 - Fraud detection applications, used in financial institutions 
 
-Of course, its not all unicorns and rainbows! Like any other technology, AI has its downsides and can be misused, but let's focus on the positive here! On a personal level, AI has made our lives more efficient in many ways and will continue to do so. It has also significantly impacted many industries while creating new opportunities. This trend is going to continue! So, we all need to learn more about how AI works and how it impacts us today and in the future!
+Of course, it's not all unicorns and rainbows! Like any other technology, AI has its downsides and can be misused, but let's focus on the positive here! On a personal level, AI has made our lives more efficient in many ways and will continue to do so. It has also significantly impacted many industries while creating new opportunities. This trend is going to continue! So, we all need to learn more about how AI works and how it impacts us today and in the future!
 
 For this project, I decided to use deep learning, which is a key instrument in AI applications, and generate captions for images. Wait, can we do that? Yes, we can! Even though doing something like this was inconceivable a few years ago, the recent advancements in deep learning have made it possible. Generating captions, which is basically the ability to understand and describe an image, is thrilling, but there are also many real-world applications for it. For instance for self-driving cars, where "the car" needs to understand what is on the road and around it. Another example would be CCTV cameras, where we ideally want to recognize the alarming situations quickly to prevent crimes and accidents. But my main motivation for picking up this project was to help the blinds and people with the visual impairments by creating a technology that converts images to captions and then to audio. 
 
-I did this project using Python and Keras and will explain the data and process in this post. Here's an overview of the process:
+I did this project using Python and Keras and will explain the data and process in this post. Here's a quick overview of the process:
 
 ![Overview](../assets/img/image_captions/Itro_Pic.jpg){: .postImage}
 
@@ -51,7 +51,7 @@ To generate meaningful captions, we need to train a model for both images and th
 As you can see, we have two kinds of data here: image and text. Before creating a neural network model, we need to preprocess and analyze images and captions separately and convert them to a format that the model can understand. I will explain how to do this in the next two sections.
 
 # Preprocessing Image data
-I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on another task. This is a popular approach in deep learning, and in fact, so much of the progress in deep learning over the past few years is attributable to the availability of such pre-trained models. There are many pre-trained CNN models available to choose from (e.g. VGG16, ResNet50, Xception). For this project, I used InceptionV3, which is efficient and has great accuracy. This model was created by Google Research in 2014 and it was trained on ImageNet dataset (which contains 1.4M images and 1,000 image classes).
+I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on another task. This is a popular approach in deep learning, and in fact, so much of the progress in deep learning over the past few years is attributable to the availability of such pre-trained models. There are many pre-trained CNN models available to choose from (e.g. VGG16, ResNet50, Xception). For this project, I used InceptionV3, which is an efficient model and has great accuracy. This model was created by Google Research in 2014 and it was trained on ImageNet dataset (which contains 1.4M images and 1,000 image classes).
 
 I converted all the images to size 299x299, as required by InceptionV3, and passed them to the model as inputs. Then instead of training the model all over again, I froze the base layers that are already trained to quickly learn the features for a given image and extracted the resulted feature vectors of 2,048-length (also known as the "bottleneck features"). This is common practice when using pre-trained models. The below image shows inceptionV3's architecture, as well as its input image and output.
 
@@ -78,7 +78,7 @@ The way that the final model works is that it will generate a caption, one word 
 - **startseq** a little girl climbing the stairs to her playhouse **endseq** 
 - **startseq** a little girl in a pink dress going into a wooden cabin **endseq** 
 
-Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length since it is not too long. Then I padded the shorter captions with zeros. So now all captions have a length of 40.
+Generally, the input sequences for a neural network model should have the same length (because we need to pack them all in a single tensor). For example, when working with text data such as reviews, it is common to truncate them to a reasonable length and make them equal length. For the case of the captions, since they are not too long, I looked at the maximum caption length in the data, which was 40, and used that as my fixed sequence length since it is not too long. Then I padded the shorter captions with zeros so that now all captions have a length of 40.
 
 ## 3. Removing the outliers
 
@@ -86,13 +86,13 @@ Next, I removed the words with a frequency of less than 10 times. This step is n
 
 ## 4. Tokenizing
 
-Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there were 1698 unique words/tokens in the dataset.
+Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there were 1,698 unique words/tokens in the dataset.
 
 ## 5. Word Embeddings 
 
 The next step is doing word embedding. I used transfer learning again to do word embedding to leverage a model that was trained on a much larger text data, and extracted (semantically-meaningful) feature vectors from the captions. For this project, I used Global Vectors for Word Representation (GloVe) with 200-dimension. GloVe is an unsupervised learning algorithm for obtaining vector representation for words. In simple words, it allows us to take a corpus of text and transform each word into a position in a high-dimensional space. 
 
-In other words, using the precomputed word embeddings available in GloVe, I created an embedding matrix for all the 1698 unique words in my data. This embedding matrix will later be loaded into the final model before training. Note that if a word is in our data but is not in GloVe, the values of the vectors for that word will be zeros. To make this more concrete, here's an example of how a sample captions will look like when being fed into the model. Note, I'm showing the words here for the sake of clarity, but as mentioned in the Tokenizing step, they will be represented by integers:
+In other words, using the precomputed word embeddings available in GloVe, I created an embedding matrix for all the 1,698 unique words in my data. This embedding matrix will later be loaded into the final model before training. Note that if a word is in our data but is not in GloVe, the values of the vectors for that word will be zeros. To make this more concrete, here's an example of how a sample captions will look like when being fed into the model. Note that I'm showing the words here for the sake of clarity, but as mentioned in the Tokenizing step, they will be represented by integers:
 
 ![Text tensor input example](../assets/img/image_captions/text_tensor_example.jpg){: .postImage}
 
@@ -110,7 +110,7 @@ Now that we have preprocessed both images and captions, we can feed them into th
 
 Since we have two inputs, we have to use the Functional API model, instead of the Sequential model that can only receive one input. The steps to set up the model is as follows:
 
-**Input 1:** The first input of the model will be the features vectors of 2,048-length that were extracted from the images.
+**Input 1:** The first input of the model will be the feature vectors of 2,048-length that were extracted from the images.
 
 **Input 2:** The second input of the model will be the text sequences, each having a length of 40 and an embedding dimension of 200. But instead of feeding sequences directly into the model, we first need to feed them into an LSTM layer and then to the final model. LSTM (Long Short-Term Memory) is just a special recurrent network layer that can process sequences and understand the order of the words.
 
@@ -118,7 +118,7 @@ Since we have two inputs, we have to use the Functional API model, instead of th
 
 **Modeling:** Then the model takes in the tensor input of image and text data, and builds two more dense layers on top of it. Then we apply a Softmax function on top of the final layer (to convert the data in final layers into probabilities). After setting up this structure, I fitted the model using an "adam" optimizer and used "categorical_crossentropy" to measure the loss. 
 
-**Output:** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is 1,698, which is the same as the number of unique words in the data. In other words, each probability value represents the probability of predicting its relative unique word. These probability values are conditioned on images, meaning that the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image showing a dog, than for an image not showing a dog.
+**Output:** The output of this model is a single vector. Each element of the vector is a probability value and they sum up to one. The length of this vector is 1,698, which is the same as the number of unique words in the data. In other words, each value represents the probability of predicting its relative unique word. These probability values are conditioned on images, meaning that the probability value for a word differs from one image to another image. For example, we expect the word "dog" to have a higher probability for an image showing a dog, than for an image not showing a dog.
 
 The below image was plotted by the model, it shows the architecture that I just explained, as well as the random dropouts that I used in different layers to avoid overfitting.  
 
@@ -172,11 +172,11 @@ Blow are a few examples of the captions generated by the model. I will add the a
 
 # Conclusions 
 
-We were able to build a decent model and created some great generate captions with training a neural network model on only 6,000 images and captions. The model was strengthened by the power of the transfer learning (InceptionV3 for images and GLoVE for captions), where the models were previously trained on very large image and text datasets. It should be noted that the testing images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs and not fruits or flowers! 
+We were able to build a decent model and generate some great captions with training a neural network model on only 6,000 images and captions. The model was strengthened by the power of the transfer learning (InceptionV3 for images and GLoVE for captions), where the models were previously trained on very large image and text datasets. It should be noted that the testing images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs and not fruits or flowers! 
 
-You can see my code on my Github repo. Note that, if you use my code or if I run train the model again, the resulted captions will be slightly different, due to the stochastic nature of the model.
+You can see my code on my Github repo. Note that due to the stochastic nature of the model, if you use my code or even if I run my model again, the resulted captions will be slightly different.
 
-For future work, I would like to work with a larger dataset containing more types of images so that the model can make predictions for more image classes. I would also like to use a GPT-2 model instead of an LSTM model. However, for captions, which mostly contain factual and straight forward text as opposed to more complext texts such as poetry or legal language, I don't expect GPT-2 will make a huge improvement. 
+For future work, I would like to work with a larger dataset containing more types of images so that the model can generate captions for more image classes. I would also like to try a GPT-2 model instead of an LSTM model. However, I don't expect that it will make a huge improvement since captions mostly contain factual/straight forward text, as opposed to more complex texts such as poetry or legal language. 
 
 
 
