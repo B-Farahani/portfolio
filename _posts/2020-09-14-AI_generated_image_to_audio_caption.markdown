@@ -88,7 +88,7 @@ Next, I removed the words with a frequency of less than 10 times. This step is n
 
 Next, we need to tokenize the words and convert them to integers before feeding them into the model. I broke down the sentences to words and then tokenized the words by assigning an integer to each unique word. After data cleaning and removing the outliers there were 1,698 unique words/tokens in the dataset.
 
-## 5. Word Embeddings 
+## 5. Word Embedding 
 
 The next step is doing word embedding. I used transfer learning again to do word embedding to leverage a model that was trained on a much larger text data, and extracted (semantically-meaningful) feature vectors from the captions. For this project, I used Global Vectors for Word Representation (GloVe) with 200-dimension. GloVe is an unsupervised learning algorithm for obtaining vector representation for words. In simple words, it allows us to take a corpus of text and transform each word into a position in a high-dimensional space. 
 
