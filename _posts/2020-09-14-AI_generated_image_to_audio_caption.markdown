@@ -148,7 +148,7 @@ Finally, I converted the captions to speech by passing them through Google’s W
 
 # Audio Caption Examples
 
-Below are a few examples of the generated audio captionsL:
+Below are a few examples of the generated audio captions:
 
 ![Dog](../assets/img/image_captions/Dog.jpg){: .postImage}
 **Generated caption:**    "a dog is chasing a ball in the grass"  [Click for audio caption](../assets/img/image_captions/dog.mp3)
