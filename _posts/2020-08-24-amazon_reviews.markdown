@@ -121,3 +121,6 @@ In the case of Amazon's headphones, and this dataset, there are many reviews ava
 
 This recommendation system can, of course, be further tuned to allow the customers to filter for features such as price or brand. Also, as mentioned above, the products' descriptions can easily be used instead of the reviews as an alternative strategy and to also capture the new products that do not have reviews yet.
 
+# Conclusions
+
+It's crucial for all businesses to understand what the customers are thinking about the company and products, and how satisfied they are. Natural language processing allows us to achieve this without a human reading all the comments one by one. In this project, I used NLP to find the main topics discussed by customers for headphones and performed sentiment analysis, using unsupervised learning techniques. I compared the most frequent things customers have said about the products of two rival brands (Sony and Panasonic) and found some interesting insights. And Finally, I built a recommender engine using content-based filtering to help customers find their desired products based on what other customers have said about the products. 
