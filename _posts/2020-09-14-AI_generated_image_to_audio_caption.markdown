@@ -159,7 +159,8 @@ Below are a few examples of the generated audio captions:
 
 &nbsp;
 ![Bike](../assets/img/image_captions/bike.jpg){: .postImage}
-**Generated caption:**    "a man in a red shirt and helmet is riding a bike on a dirt path"  [Click for audio caption](../assets/img/image_captions/bike.mp3)
+**Generated caption:**    "a man in a red shirt and helmet is riding a bike on a dirt path"  [Click for audio caption](../assets/img/image_captions/bike.mp3) 
+The model is confusing the reddish helmet and bike with a red shirt!
 
 &nbsp;
 ![Boy_on_swing](../assets/img/image_captions/Boy_on_swing.jpg){: .postImage}
