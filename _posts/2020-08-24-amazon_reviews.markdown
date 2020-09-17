@@ -2,7 +2,7 @@
 layout: post
 title: Analyzing Amazon Reviews
 date: 2020-08-24 18:32:20 +0300
-description: Analyzing amazon reviews using NLP and recommendation system.
+description: Analyzed Amazon reviews using NLP and built a recommendation system.
 img: amazon_reviews/Amazon_Reviews_Cover.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Natural Language Processing, NLP, Topic Modeling, Recommender System, Unsupervised Learning]
