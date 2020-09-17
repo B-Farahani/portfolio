@@ -176,7 +176,7 @@ I was able to build a decent model and generate some great audio captions using 
 
 For future work, I would like to work with a larger dataset containing more types of images so that the model can generate captions for more image classes. I would also like to try a GPT-2 model instead of an LSTM model. However, I don't expect that it will make a huge improvement since captions mostly contain factual/straight forward text, as opposed to more complex texts such as poetry or legal language. 
 
-You can see my code on my Github repo. Note that due to the stochastic nature of the model, if you use my code or even if I run my model again, the resulted captions will be slightly different. Lastly, it should be noted that to generate captions for new images, the images should be semantically related to the training images. For example, if we only train the model on cats and dogs, the model can only predict cats or dogs and not fruits or flowers!
+You can see my code on my Github repo (to be added soon). Note that due to the stochastic nature of the model, if you use my code or even if I run my model again, the resulted captions will be slightly different. Lastly, it should be noted that to generate captions for new images, the images should be semantically related to the training images. For example, if we train the model only on cats and dogs, the model can only predict cats or dogs and not fruits or flowers!
 
 I certainly enjoyed working on this project. I hope you enjoyed reading about it!
 
