@@ -50,7 +50,7 @@ To generate meaningful captions, we need to train a model for both images and th
 
 As you can see, we have two kinds of data here: image and text. Before creating a neural network model to generate captions, we need to preprocess and analyze images and captions separately and convert them to a format that the model can understand. I will explain how to do this in the next two sections.
 
-# Preprocessing Image data
+# Preprocessing Images
 I used Convolutional Neural Network (CNN) and transfer learning to interpret the content of the images. Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on another task. This is a popular approach in deep learning, and in fact, so much of the progress in deep learning over the past few years is attributable to the availability of such pre-trained models. There are many pre-trained CNN models available to choose from (e.g. VGG16, ResNet50, Xception). For this project, I used InceptionV3, which is an efficient model and has great accuracy. This model was created by Google Research in 2014 and it was trained on ImageNet dataset (which contains 1.4M images in 1,000 image classes).
 
 I converted all the images to size 299x299, as required by InceptionV3, and passed them to the model as inputs. Then instead of training the model all over again, I froze the base layers that are already trained to quickly learn the features for a given image and extracted the resulted feature vectors of 2,048-length (also known as the "bottleneck features"). This is common practice when using pre-trained models. The below image shows inceptionV3's architecture, as well as its input image and output.
@@ -100,7 +100,7 @@ The numbers shown above are made-up examples and this was just an example for a 
 
 That was a lot of preprocessing steps, so let me summarize: 1) I cleaned the text and removed noise, 2) made all the captions equal length by padding the shorter ones, and added a starting and ending word to each caption, 3) removed the outliers, 4) tokenized the words, and finally, 4) embedded the words using a pre-trained GloVe model.
 
-# Neural Network Model and Generating Captions 
+# Model and Generating Captions 
 
 Now that we have preprocessed both images and captions, we can feed them into the final neural network model and generate captions. The simplified figure below shows the general architecture of the model, how it receives the text and image data, and how it generates captions.
 
