@@ -72,7 +72,7 @@ I also looked at the average sentiment for all the reviews, combined, for the la
 # Topic Modeling (Unsupervised Learning)
 
 
-I divided the topics into positive and negative to be able to look at them separately and compare them. I used both Countectorizer and TF-IDF for feature extraction and Non-negative Matrix Factorization (NMF) and Latent Semantic Analysis (LDA) to reduce dimensionality and find the main topics in the corpus (separately for the positive reviews and for the negative reviews). TF-IDF with NMF performed the best and below are the topics I found:
+I divided the topics into positive and negative to be able to look at them separately and compare them. I used both Countvectorizer and TF-IDF for feature extraction and used Non-negative Matrix Factorization (NMF) and Latent Semantic Analysis (LDA) to reduce dimensionality and find the main topics in the corpus (separately for the positive reviews and for the negative reviews). TF-IDF with NMF performed the best and below are the topics I found:
 
 **Positive Topics:** 
 
@@ -109,11 +109,11 @@ It turns out that we can learn a lot by comparing the most frequent comments;
 - Many people specified that they purchased a second pair of Sony headphones, but that was not the case for Panasonic!
 
 # Recommender System 
-There are a few kinds of recommender systems that are commonly used by companies: content-based filtering and collaborative filtering (item-based and user-based). Companies use one or a variety of these methods to recommend the best products to the customers and consequently increase sales. The appropriate recommender engine and the recommended products are chosen based on a variety of factors such as customers' demographics and the nature of the product. For example, movies, electronic products, and news articles are very different and could require their unique recommendation strategies. The best method and recommendations also significantly depend on business needs and direction. For example, other than what the customer would find desirable, a company may want to promote certain products more than other products or perhaps recommend products that are on sale.
+There are a few kinds of recommender systems that are commonly used by companies: content-based filtering and collaborative filtering (item-based and user-based). Companies use one or a variety of these methods to recommend the best products to the customers and consequently increase sales. The appropriate recommender engine and the recommended products are chosen based on a variety of factors such as customers' demographics and the nature of the product. For example, movies, electronic products, and news articles could require their unique and different recommendation strategies since they are very different in nature. The best method and recommendations also significantly depend on business needs and direction. For example, other than what the customer would find desirable, a company may want to promote certain products more than other products or perhaps recommend products that are on sale.
 
 For this project, I decided to create a content-based filtering using reviews to help customers find the desired product based on other customers' reviews. Generally, in content-based filtering, the similarity between products is calculated based on the attributes of the products (e.g. text/description, brand, price). This method is often used to solve the cold start problem, where user information such as ratings or users' purchase history is not available. 
 
-In the case of Amazon's headphones, and this dataset, there are many reviews available, so I created a content-based filtering using reviews to help the customer get a recommendation, based on the reviews that have the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the top three recommended products: 
+In the case of Amazon's headphones, and this dataset, there are many reviews available, so I created a content-based filtering recommender system using reviews to help the customer get a recommendation, based on the reviews that have the closest distance (cosine similarity) with what the user is looking for. To showcase this, I have included below an example of a user's search/text input and the top three recommended products: 
 
 **Customers' text:** "Comfortable headphone, with great sound quality and good looking design!"
 
