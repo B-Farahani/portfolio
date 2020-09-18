@@ -12,7 +12,7 @@ There is no doubt that the internet has revolutionized the way we live today and
 
 On the other hand, while shopping has become easier in so many ways, one problem that consumers are increasingly facing is that online stores have millions of products available, and finding the desired product can become overwhelmingly difficult due to the “information overload”. Therefore, recommending the right products to the customers is important and leads to both customer satisfaction and higher sales and profits.
 
-For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier for the customers. Below is a summary of the data, process, and results. You can see my code on my Github [repo](https://maryam4420.github.io/portfolio/amazon_reviews/).
+For this project, I decided to use Natural Language Processing to analyze Amazon reviews for headphone products to understand what customers like or dislike about the products and see what we can learn from them. Additionally, I created a content-based recommender system to make finding the right products easier for the customers. Below is a summary of the data, process, and results. You can see my code in my Github [repo](https://maryam4420.github.io/portfolio/amazon_reviews/).
 
 ![Overview](../assets/img/amazon_reviews/Itro_Pic.jpg){: .postImage}
 # Data and Preprocessing
