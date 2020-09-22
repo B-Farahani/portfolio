@@ -1,5 +1,5 @@
 title: Hello, world! I'm Maryam Ghaseri
-description: > <iframe src="https://drive.google.com/file/d/1NvHpDjM703b9aWtHNNds1hmrgjxnl_s4/preview" width="640" height="480"></iframe> # this means to ignore newlines until "baseurl:"
+description: <iframe src="https://drive.google.com/file/d/1NvHpDjM703b9aWtHNNds1hmrgjxnl_s4/preview" width="640" height="480"></iframe> # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
@@ -11,7 +11,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Maryam Ghaseri # add your name
 author-img: Maryam-Ghaseri.jpg # add your photo
-about-author: I am a data scentist and an actuary. Always hungry to keep learning. # add description
+about-author: I am a data scentist and an actuary. Always hungry to keep learning. <iframe src="https://drive.google.com/file/d/1NvHpDjM703b9aWtHNNds1hmrgjxnl_s4/preview" width="640" height="480"></iframe> # add description
 social-github: maryam4420 # add your Github handle
 social-linkedin: https://www.linkedin.com/in/maryam-ghaseri-asa-maaa-5017ba58/
 social-email: maryam.ghaserin@gmail.com
