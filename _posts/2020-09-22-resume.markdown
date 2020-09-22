@@ -9,4 +9,4 @@ tags:
 ---
 
 
-<object data="{{Resume_MG_9.22.20}}" width="1000" height="1000" type='application/pdf'/>
+<object data="{{Resume_MG_9.22.20./../assets/img/resume/}}" width="1000" height="1000" type='application/pdf'/>
