@@ -35,7 +35,7 @@ information such as:
 
 # Project Design
 
-To narrow down the questions, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that VCs can use this information to decide if they should invest in a company or not. The results however, should be coupled with intuition and industry knowledge as historical data is not always a good indication of what might happen in the future! 
+To narrow down the question, I approached this from a venture capital (“VC”) point of view and focused on companies that have received at least one round of funding. The idea is that VCs can use this information to decide if they should invest in a company or not. The results however, should be coupled with intuition and industry knowledge as historical data is not always a good indication of what might happen in the future! 
 
 I used the following criteria to determine success and failure and labeled the data accordingly:
 
@@ -48,9 +48,7 @@ I used the following criteria to determine success and failure and labeled the d
 - Closed
 - Operating for less than six years and no funding in the last three years.
 
-It is hard to label the operating companies. However, the majority of the companies in my data were in operating status, so in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful in attracting funding and label them as "failed".
- 
- In general, the average time between funding rounds for most companies is 12 to 18 months. Therefore, I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
+It is hard to label the operating companies. However, the majority of the companies in my data were in operating status, so in order to use a portion of those companies in my analysis, I tried to identify the companies that haven't been very successful in attracting funding and label them as "failed". In general, the average time between funding rounds for most companies is 12 to 18 months. Therefore, I labeled the companies that have been operating only for five years, received funding once, but have not attracted funding in the last three years as failed. 
 
 # Algorithms / Results
 
@@ -76,6 +74,6 @@ The figure below shows the coefficients and importance of each feature. Comparin
 
 # Flask App 
 
-Finally, I created an app using Flask, to predict the probability of success. Here’s a video of how it works:
+Finally, I created an app using Flask, to predict the probability of success. The below video shows how it receives the inputs and makes the prediction.
 
 [![Demo Startup Success App](https://j.gifs.com/r84WNK.gif){: .postImage}](https://www.youtube.com/watch?v=OIZRC9J9Voc)
