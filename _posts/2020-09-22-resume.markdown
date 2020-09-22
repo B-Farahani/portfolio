@@ -9,4 +9,4 @@ tags:
 ---
 
 
-<object data="{{Resume_MG_9.22.20./../assets/img/resume/}}" width="1000" height="1000" type='application/pdf'/>
+<iframe src="https://drive.google.com/file/d/1NvHpDjM703b9aWtHNNds1hmrgjxnl_s4/preview" width="640" height="480"></iframe>
