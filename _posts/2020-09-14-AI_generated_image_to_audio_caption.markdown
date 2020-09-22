@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AI-Generated Image to Audio Captions
+title: AI-Generated Audio Captions For Images
 date: 2020-09-15 18:32:20 +0300
 description: Generating audio captions for images using artificial intelligence.
 img: image_captions/image_captions_cover_photo.jpg # Add image post (optional)
