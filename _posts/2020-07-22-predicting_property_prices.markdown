@@ -7,6 +7,6 @@ img: startup-success/Startup-Cover.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Regression, Web-scraping]
 ---
-Blog Post coming soon!
+Blog post coming soon!
 
 <iframe src="https://drive.google.com/file/d/1dFDkKNqyQZcJwlEoMLXBw-sXUZLnFPZX/preview" width="850" height="1100"></iframe>
