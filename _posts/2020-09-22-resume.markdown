@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Resume
-date: 2020-10-05 13:32:20 +0300
+date: 2020-10-20 13:32:20 +0300
 description: resume
 fig-caption: # Add figcaption (optional)
 tags: 
 ---
 
-<iframe src="https://drive.google.com/file/d/1mR_QXH4Z6FZKGM5j3tE1w6j9NcrTiXhP/preview" width="850" height="1100"></iframe>
+<iframe src="https://drive.google.com/file/d/11IkvPXiBORDIPWxQpVgEEn4Vl-0SgvDU/preview" width="850" height="1100"></iframe>
