@@ -9,15 +9,15 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
-author: Maryam Ghaseri # add your name
-author-img: Maryam-Ghaseri.jpg # add your photo
+author: Bahman Farahani # add your name
+author-img: Bahman-Farahani.jpg # add your photo
 about-author: # add description
-social-github: maryam4420 # add your Github handle
+social-github: b-farahani # add your Github handle
 social-linkedin: https://www.linkedin.com/in/maryam-ghaseri-asa-maaa-5017ba58/
-social-email: maryam.ghaserin@gmail.com
+social-email: ba.ma.farahani@gmail.com
 
 # Disqus
-discus-identifier: maryam-ghaseri # add your discus identifier
+discus-identifier: bahman-farahani # add your discus identifier
 
 # Tracker
 analytics: # Google Analytics
